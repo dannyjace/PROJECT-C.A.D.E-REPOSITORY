@@ -95,7 +95,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
     "com.unity.postprocessing": {
       "version": "3.5.1",
       "depth": 0,
@@ -114,15 +113,6 @@
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.physics": "1.0.0",
         "com.unity.settings-manager": "1.0.3"
-=======
-    "com.unity.polybrush": {
-      "version": "1.2.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.imgui": "1.0.0",
-        "com.unity.settings-manager": "2.0.1"
->>>>>>> staging
       },
       "url": "https://packages.unity.com"
     },
@@ -193,11 +183,7 @@
       }
     },
     "com.unity.splines": {
-<<<<<<< HEAD
       "version": "2.8.1",
-=======
-      "version": "2.8.2",
->>>>>>> staging
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -207,19 +193,6 @@
       },
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
-=======
-    "com.unity.terrain-tools": {
-      "version": "5.3.1",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.terrain": "1.0.0",
-        "com.unity.modules.terrainphysics": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
->>>>>>> staging
     "com.unity.test-framework": {
       "version": "1.5.1",
       "depth": 0,
@@ -259,15 +232,6 @@
       "dependencies": {
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
-      }
-    },
-    "com.unity.visualeffectgraph": {
-      "version": "17.2.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.shadergraph": "17.2.0",
-        "com.unity.render-pipelines.core": "17.2.0"
       }
     },
     "com.unity.visualscripting": {

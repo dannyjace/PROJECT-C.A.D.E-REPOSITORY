@@ -859,11 +859,7 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-<<<<<<< HEAD
   metroPackageName: FPSPrototypeDev2
-=======
-  metroPackageName: PROJECTC.A.D.E
->>>>>>> staging
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
@@ -872,11 +868,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: FPS_Prototype_Dev2
   wsaImages: {}
-<<<<<<< HEAD
   metroTileShortName: FPS_Prototype_Dev2
-=======
-  metroTileShortName: PROJECT C.A.D.E
->>>>>>> staging
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
