@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: A_Pose_Mask
+  m_Mask: 00000000010000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: MESH
+    m_Weight: 1
+  - m_Path: MESH_CHARACTER_ATTACHMENT_BOOTS
+    m_Weight: 1
+  - m_Path: MESH_CHARACTER_ATTACHMENT_BRIEFS_01
+    m_Weight: 1
+  - m_Path: MESH_CHARACTER_ATTACHMENT_PANTS
+    m_Weight: 1
+  - m_Path: MESH_CHARACTER_ATTACHMENT_T_SHIRT_01
+    m_Weight: 1
+  - m_Path: MESH_EYES
+    m_Weight: 1
+  - m_Path: SKELETON
+    m_Weight: 1
+  - m_Path: SKELETON/root
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/pelvis.L
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/pelvis.R
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/breast.L
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/breast.R
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/neck
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/neck/head
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/neck/head/eye.L
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/neck/head/eye.R
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/neck/head/jaw
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/index.L.001
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/index.L.001/index.L.002
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/index.L.001/index.L.002/index.L.003
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/middle.L.001
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/middle.L.001/middle.L.002
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/middle.L.001/middle.L.002/middle.L.003
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/pinky.L.001
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/pinky.L.001/pinky.L.002
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/pinky.L.001/pinky.L.002/pinky.L.003
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/ring.L.001
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/ring.L.001/ring.L.002
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/ring.L.001/ring.L.002/ring.L.003
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.L.001
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.L.001/thumb.L.002
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.L/upper_arm.L/forearm.L/hand.L/thumb.L.001/thumb.L.002/thumb.L.003
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/index.R.001
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/index.R.001/index.R.002
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/index.R.001/index.R.002/index.R.003
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/middle.R.001
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/middle.R.001/middle.R.002
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/middle.R.001/middle.R.002/middle.R.003
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/pinky.R.001
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/pinky.R.001/pinky.R.002
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/pinky.R.001/pinky.R.002/pinky.R.003
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/ring.R.001
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/ring.R.001/ring.R.002
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/ring.R.001/ring.R.002/ring.R.003
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.R.001
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.R.001/thumb.R.002
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/spine.001/spine.002/spine.003/shoulder.R/upper_arm.R/forearm.R/hand.R/thumb.R.001/thumb.R.002/thumb.R.003
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/thigh.L
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/thigh.L/shin.L
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/thigh.L/shin.L/foot.L
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/thigh.L/shin.L/foot.L/heel.02.L
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/thigh.L/shin.L/foot.L/toe.L
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/thigh.R
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/thigh.R/shin.R
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/thigh.R/shin.R/foot.R
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/thigh.R/shin.R/foot.R/heel.02.R
+    m_Weight: 1
+  - m_Path: SKELETON/root/hips/thigh.R/shin.R/foot.R/toe.R
+    m_Weight: 1
