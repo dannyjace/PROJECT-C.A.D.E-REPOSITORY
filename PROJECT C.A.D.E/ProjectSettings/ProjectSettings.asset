@@ -843,8 +843,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: PROJECT C.A.D.E
-  metroPackageVersion: 
+  metroPackageName: PROJECTC.A.D.E
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -852,7 +852,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: PROJECT C.A.D.E
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: PROJECT C.A.D.E
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
