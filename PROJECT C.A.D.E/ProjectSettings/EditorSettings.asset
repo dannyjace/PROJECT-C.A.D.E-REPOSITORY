@@ -26,8 +26,13 @@ EditorSettings:
   m_PrefabModeAllowAutoSave: 1
   m_EnterPlayModeOptionsEnabled: 1
   m_EnterPlayModeOptions: 3
+<<<<<<< HEAD
   m_GameObjectNamingDigits: 1
   m_GameObjectNamingScheme: 0
+=======
+  m_GameObjectNamingDigits: 2
+  m_GameObjectNamingScheme: 1
+>>>>>>> staging
   m_AssetNamingUsesSpace: 1
   m_InspectorUseIMGUIDefaultInspector: 0
   m_UseLegacyProbeSampleCount: 0
