@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8dd587fcbb0e647bf1200fe158c578, type: 3}
+  m_Name: Sniper Rifle
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponData
+  model: {fileID: 8360218140025613808, guid: 1026b8d41fe11a046827ddb2303d51ad, type: 3}
+  pickUpSound: {fileID: 0}
+  emptyClipSound: {fileID: 0}
+  reloadSound: {fileID: 8300000, guid: 9e0e1c40f00512f4996d222576ec21aa, type: 3}
+  shootSounds: []
+  shootVolume: 0.5
+  gunType: 4
+  shootDamage: 30
+  shootDistance: 50
+  shootRate: 1
+  ammoCur: 0
+  ammoMax: 10
+  reloadTime: 3
+  impactEffect: {fileID: 2744737168295250287, guid: 6d0195616e555194b9075ca65c788fed, type: 3}
+  impactForce: 5
+  muzzleFlash: {fileID: 0}
+  muzzleFlashPosition: {fileID: 0}
+  aimingPosePosition: {x: 0, y: 0, z: 0}
+  aimingPoseRotation: {x: 0, y: 0, z: 0}
+  recoilPlayRate: 1
+  recoilPositionSpeed: 100
+  recoilRotationSpeed: 100
+  recoilXRotationMultiplier: -15
+  recoilYRotationMultiplier: 5
+  recoilZRotationMultiplier: 10
+  recoilXPositionMultiplier: 0
+  recoilYPositionMultiplier: -0.0001
+  recoilZPositionMultiplier: -0.1
+  recoilXRotationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  recoilYRotationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  recoilZRotationCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  recoilXPositionCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  recoilYPositionCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  recoilZPositionCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

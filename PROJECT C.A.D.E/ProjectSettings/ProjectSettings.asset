@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 0d3b70e6c44147b48afa53ee87b7b30d
+  productGUID: 95fd25244ba3f914482ad33a4ed6ad05
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: PROJECT C.A.D.E
+  productName: FPS_Prototype_Dev2
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -86,7 +86,6 @@ PlayerSettings:
   muteOtherAudioSources: 0
   Prepare IOS For Recording: 0
   Force IOS Speakers When Recording: 0
-  audioSpatialExperience: 0
   deferSystemGesturesMode: 0
   hideHomeButton: 0
   submitAnalytics: 1
@@ -143,7 +142,8 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 11400000, guid: 507b1bc5637813847b788597ebdbdd53, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -843,16 +843,16 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: PROJECT C.A.D.E
-  metroPackageVersion: 
+  metroPackageName: FPSPrototypeDev2
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: PROJECT C.A.D.E
+  metroApplicationDescription: FPS_Prototype_Dev2
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: FPS_Prototype_Dev2
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -919,13 +919,13 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 1
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 1b5f6385-ff28-4f3a-90de-e9efdc63b1ee
+  cloudProjectId: 24a0f4b5-ce03-4fd5-8057-146300e8bc09
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: PROJECT C.A.D.E
-  organizationId: dannyjace
+  projectName: FPS_Prototype_Dev2 2025-09-03_22-05-15
+  organizationId: erallen883
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
