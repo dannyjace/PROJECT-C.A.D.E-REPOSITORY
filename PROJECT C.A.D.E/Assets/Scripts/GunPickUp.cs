@@ -43,7 +43,7 @@ public class GunPickUp : MonoBehaviour, IInteractable
         //    return; // Player already has this gun, do not pick up again
 
         Debug.Log("Should be picking up");
-        GameManager.instance.playerScript.GunManager.GetWeaponStats(gunStat, gun);
+        //GameManager.instance.playerScript.GunManager.GetWeaponStats(gunStat, gun);
         gunStat.ammoCur = gunStat.ammoMax;
 
 

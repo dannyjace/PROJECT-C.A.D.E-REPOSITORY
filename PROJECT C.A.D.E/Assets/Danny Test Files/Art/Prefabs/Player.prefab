@@ -362,7 +362,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1868110997717685543}
   - component: {fileID: 2891019549953712915}
-  - component: {fileID: 8008721939028690074}
   - component: {fileID: 5703830832276367492}
   - component: {fileID: 4984441277558873893}
   - component: {fileID: 7424252787211595326}
@@ -434,27 +433,8 @@ MonoBehaviour:
   audioControllerSettings:
     data: {fileID: 11400000, guid: b26c1b2acbad3f64f8c277d4fa18e3ac, type: 2}
     footStepAudioSource: {fileID: 2428543243037395778}
-  gunManager: {fileID: 8008721939028690074}
+  gunManager: {fileID: 0}
   inventory: []
---- !u!114 &8008721939028690074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681149136173186479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58ad015574b78ac47b368aa7574bce99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GunManager
-  weaponModel: {fileID: 5208113646842270803}
-  currentWeaponData: {fileID: 0}
-  shootIgnoreLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  fireSound: {fileID: 8300000, guid: d7f531f2e13f78746a0771a83524094e, type: 3}
-  weaponList: []
 --- !u!95 &5703830832276367492
 Animator:
   serializedVersion: 7

@@ -94,14 +94,7 @@ public class PlayerAnimationController
     }
     private float GetTargetAimingMultiplier()
     {
-        if (playerController.GunManager.weaponList.Count > 0)
-        {
-            return playerController.AimingState == PlayerAimingState.Active ? 0.25f : 1f;
-        }
-        else
-        {
-            return 1;
-        }
+        return playerController.AimingState == PlayerAimingState.Active ? 0.25f : 1f;
     }
 
     private void LateUpdateSway(Transform swayPivot, Vector2 moveInput, Vector2 lookInput, PlayerAnimationControllerData data)
@@ -137,11 +130,15 @@ public class PlayerAnimationController
     {
         if (playerController.AimingState == PlayerAimingState.Active)
         {
+            /*
+
             if (playerController.GunManager.weaponList.Count > 0)
             {
                 targetPosePosition = playerController.GunManager.CurrentWeaponData.aimingPosePosition;
                 targetPoseRotation = playerController.GunManager.CurrentWeaponData.aimingPoseRotation;
             }
+
+            */
         }
         else
         {

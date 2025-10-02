@@ -18,11 +18,6 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField] private PlayerAudioControllerSettings audioControllerSettings;
     [Space(20)]
 
-    [Header("GUN SETTINGS")]
-    [Space(10)]
-    [SerializeField] GunManager gunManager;
-    [Space(20)]
-
     [Header("INVENTORY SETTINGS")]
     [Space(10)]
     public List<inventoryItem> inventory = new List<inventoryItem>();
@@ -51,8 +46,6 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public Transform MasterIK => animationControllerSettings.masterIKTransform;
     public Transform WeaponRecoilPivot => animationControllerSettings.weaponRecoilPivotTransform;
-
-    public GunManager GunManager => gunManager;
 
     #endregion
 
@@ -86,8 +79,6 @@ public class PlayerController : MonoBehaviour, IDamage
         AudioController = new PlayerAudioController(this, audioControllerSettings);
 
         AttributeController?.Initialize();
-
-        gunManager = GetComponent<GunManager>();    
     }
     private void UpdateControllers()
     {

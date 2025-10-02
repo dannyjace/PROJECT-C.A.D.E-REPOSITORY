@@ -47,8 +47,8 @@ public class PlayerAttributeController
         currentExperience = attributeControllerData.currentExperience;
         maximumExperience = attributeControllerData.maximumExperience;
 
-        HUDManager.instance.playerHPBar.fillAmount = (float)currentHealth / initialHealth;
-        HUDManager.instance.playerEXPBar.fillAmount = (float)currentExperience / maximumExperience;
+        //HUDManager.instance.playerHPBar.fillAmount = (float)currentHealth / initialHealth;
+        //HUDManager.instance.playerEXPBar.fillAmount = (float)currentExperience / maximumExperience;
     }
 
     public void Update()
@@ -69,7 +69,7 @@ public class PlayerAttributeController
             currentStamina += (int)(attributeControllerData.staminaRegenerationRate * Time.deltaTime);
         }
 
-        HUDManager.instance.playerStaminaBar.fillAmount = (float)currentStamina / initialStamina;
+        //HUDManager.instance.playerStaminaBar.fillAmount = (float)currentStamina / initialStamina;
     }
     private void UpdateInteraction()
     {
@@ -86,11 +86,11 @@ public class PlayerAttributeController
     public void AddExperience(int amount)
     {
         currentExperience += amount;
-        HUDManager.instance.playerEXPBar.fillAmount = (float)currentExperience / maximumExperience;
+        //HUDManager.instance.playerEXPBar.fillAmount = (float)currentExperience / maximumExperience;
 
         if (currentExperience > maximumExperience)
         {
-            HUDManager.instance.LevelUp();
+            //HUDManager.instance.LevelUp();
             currentExperience = currentExperience - maximumExperience;
             maximumExperience = maximumExperience * 2;
         }
@@ -98,7 +98,7 @@ public class PlayerAttributeController
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
-        HUDManager.instance.playerHPBar.fillAmount = (float)currentHealth / initialHealth;
+        //HUDManager.instance.playerHPBar.fillAmount = (float)currentHealth / initialHealth;
         playerController.StartCoroutine(playerController.FlashDamageScreen());
 
         if (currentHealth <= 0)
