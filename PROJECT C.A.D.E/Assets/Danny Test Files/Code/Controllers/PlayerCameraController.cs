@@ -1,10 +1,9 @@
-using System.Linq;
-using Player.Utilities;
+using RevolutionStudios.Player.Utilities;
 using UnityEngine;
 
 public class PlayerCameraController
 {
-    private readonly AdvancedPlayerController playerController;
+    private readonly PlayerController playerController;
     private readonly PlayerInputController inputController;
     private readonly Transform cameraRig;
     private readonly Transform cameraRigTargetTransform;
@@ -12,7 +11,7 @@ public class PlayerCameraController
     private float cameraRigXRotation;
     private float cameraRigZRotation;
 
-    public PlayerCameraController(AdvancedPlayerController player, PlayerCameraControllerSettings settings)
+    public PlayerCameraController(PlayerController player, PlayerCameraControllerSettings settings)
     {
         playerController = player;  
         inputController = player.InputController;

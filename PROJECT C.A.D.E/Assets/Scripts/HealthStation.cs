@@ -34,6 +34,8 @@ public class HealthStation : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        /*
+         
         if (GameManager.instance.playerScript.isFullyHealed)
         {
             isHealing = false;
@@ -60,6 +62,7 @@ public class HealthStation : MonoBehaviour, IInteractable
 
         }
 
+        */
 
     }
 
@@ -86,7 +89,7 @@ public class HealthStation : MonoBehaviour, IInteractable
     private IEnumerator HealOverTime()
     {
         objectRenderer.material = activeMaterial;
-        GameManager.instance.playerScript.FillPlayerHPBar(healAmount);
+        //GameManager.instance.playerScript.FillPlayerHPBar(healAmount);
         yield return new WaitForSeconds(1f);
 
     }

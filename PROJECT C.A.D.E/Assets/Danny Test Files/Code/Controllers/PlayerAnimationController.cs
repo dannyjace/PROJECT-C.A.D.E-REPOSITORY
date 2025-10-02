@@ -1,10 +1,10 @@
-using Player.Data;
-using Player.Utilities;
+using RevolutionStudios.Player.Utilities;
+using RevolutionStudios.Player.Data;
 using UnityEngine;
 
 public class PlayerAnimationController 
 {
-    private readonly AdvancedPlayerController playerController;
+    private readonly PlayerController playerController;
     private readonly PlayerInputController inputController;
     private readonly PlayerAnimationControllerSettings animationControllerSettings;
     private readonly Animator animator;
@@ -28,7 +28,7 @@ public class PlayerAnimationController
     private Vector3 targetPosePosition;
     private Vector3 targetPoseRotation;
 
-    public PlayerAnimationController(AdvancedPlayerController player, PlayerAnimationControllerSettings settings)
+    public PlayerAnimationController(PlayerController player, PlayerAnimationControllerSettings settings)
     {
         playerController = player;
         inputController = player.InputController;

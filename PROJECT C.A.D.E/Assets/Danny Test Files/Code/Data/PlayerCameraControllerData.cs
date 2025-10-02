@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Player.Data
+namespace RevolutionStudios.Player.Data
 {
-    [CreateAssetMenu(fileName = "New Player Camera Controller Data", menuName = "Player/Data/Camera Controller Data")]
+    [CreateAssetMenu(fileName = "New Player Camera Controller Data", menuName = "Revolution Studios/Data/Player/Camera Controller Data")]
     public class PlayerCameraControllerData : ScriptableObject
     {
         [Header("Camera Properties")]

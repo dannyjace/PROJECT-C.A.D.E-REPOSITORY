@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Player.Data
+namespace RevolutionStudios.Player.Data
 {
-    [CreateAssetMenu(fileName = "New Player Movement Controller Data", menuName = "Player/Data/Movement Controller Data")]
+    [CreateAssetMenu(fileName = "New Player Movement Controller Data", menuName = "Revolution Studios/Data/Player/Movement Controller Data")]
     public class PlayerMovementControllerData : ScriptableObject
     {
         [Header("Movement Properties")]

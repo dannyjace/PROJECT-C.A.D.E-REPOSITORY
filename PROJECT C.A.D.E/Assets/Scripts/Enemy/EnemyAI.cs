@@ -155,7 +155,7 @@ public class EnemyAI : MonoBehaviour, IDamage
 
             ClassDeath();
             if (gameObject != null) { Destroy(gameObject); }
-            GameManager.instance.playerScript.addEXP(expValue);
+            GameManager.instance.playerScript.AttributeController.AddExperience(expValue);
         }
         else
         {

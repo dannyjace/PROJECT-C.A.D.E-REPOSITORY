@@ -17,7 +17,7 @@ MonoBehaviour:
   animatorSprintWeightSmoothing: 0.1
   idleBobbingFrequency: 1
   idleBobbingAmplitude: 25
-  movingBobbingFrequency: 15
+  movingBobbingFrequency: 18.5
   movingBobbingAmplitude: 100
   sprintingBobbingFrequency: 20
   sprintingBobbingAmplitude: 250
