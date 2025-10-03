@@ -51,6 +51,8 @@ public class PlayerMovementController
     }
     private void UpdatePlayerLocomotionState()
     {
+        /*
+
         if (playerController.GroundedState == PlayerGroundedState.Grounded && inputController.SprintHeld && canSprint)
         {
             playerController.LocomotionState = PlayerLocomotionState.Sprinting;
@@ -59,9 +61,13 @@ public class PlayerMovementController
         {
             playerController.LocomotionState = PlayerLocomotionState.Default;
         }
+
+        */
     }
     private void UpdatePlayerAimingState()
     {
+        /*
+
         if (inputController.AimHeld)
         {
             playerController.AimingState = PlayerAimingState.Active;
@@ -72,13 +78,19 @@ public class PlayerMovementController
             playerController.AimingState = PlayerAimingState.Inactive;
             //HUDManager.instance.Reticle.SetActive(true);
         }
+
+        */
     }
 
     private void UpdatePlayerMovement()
     {
+        /*
+
         Vector3 movementVector = inputController.MovementDirection * GetTargetMovementSpeed();
 
         characterController.Move(movementVector * Time.deltaTime);
+
+        */
     }
     private void UpdatePlayerRotation()
     {
@@ -88,6 +100,8 @@ public class PlayerMovementController
     }
     private void UpdatePlayerJump()
     {
+        /*
+
         if (playerController.GroundedState == PlayerGroundedState.Grounded)
         {
             jumpCount = 0;
@@ -98,9 +112,13 @@ public class PlayerMovementController
             playerVelocity.y = playerController.JumpForce;
             jumpCount++;
         }
+
+        */
     }
     private void UpdatePlayerGravity()
     {
+        /*
+
         if (playerController.GroundedState == PlayerGroundedState.Grounded && !inputController.JumpPressed)
         {
             playerVelocity.y = 0;
@@ -111,6 +129,8 @@ public class PlayerMovementController
 
             characterController.Move(playerVelocity * Time.deltaTime);
         }
+
+        */
     }
     private float GetTargetMovementSpeed()
     {

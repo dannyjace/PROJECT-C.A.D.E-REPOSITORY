@@ -1,8 +1,9 @@
 {
-    "name": "InputActions",
+    "version": 1,
+    "name": "InputMaster",
     "maps": [
         {
-            "name": "Player",
+            "name": "Player Controls",
             "id": "9fecae2d-ca50-4bbd-9912-df68a31c38de",
             "actions": [
                 {
@@ -24,7 +25,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Crouch",
+                    "name": "Jump",
                     "type": "Button",
                     "id": "e290de63-e604-4c5f-9eac-c72e95b8a319",
                     "expectedControlType": "",
@@ -33,12 +34,12 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Prone",
+                    "name": "Stance",
                     "type": "Button",
-                    "id": "165f9b07-de8f-4ee4-984a-cdaf3fbec76a",
+                    "id": "36f93fb7-18cd-4560-b956-4570905155fa",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "Tap",
                     "initialStateCheck": false
                 },
                 {
@@ -63,15 +64,6 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "0893b089-27fb-49dd-9fcd-515212d29a9e",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Dive",
-                    "type": "Button",
-                    "id": "35929157-423b-4525-940d-1ece2c21d307",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -183,40 +175,40 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Crouch",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "bbff8699-e260-43be-a5df-2f2e13754aad",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Crouch",
+                    "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "008fe21a-edfe-47ba-a412-edf3b7996c77",
-                    "path": "<Gamepad>/buttonSouth",
+                    "id": "0b547439-7a24-4c4f-812c-2c803ab1d44f",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Prone",
+                    "action": "Stance",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "0baaa370-d85c-4b83-9890-70a9a05d0142",
+                    "id": "b279c254-2a39-41ad-b531-448ba844de51",
                     "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Prone",
+                    "action": "Stance",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -283,28 +275,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a66e0fc3-08ab-4f84-a6cf-65b5aab6f521",
-                    "path": "<Gamepad>/buttonWest",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Dive",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "99f53322-0afd-4675-8368-6ac328e528ff",
-                    "path": "<Keyboard>/f",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Dive",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

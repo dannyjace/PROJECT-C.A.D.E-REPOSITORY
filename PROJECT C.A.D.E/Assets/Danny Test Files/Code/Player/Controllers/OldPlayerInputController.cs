@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerInputController
+public class OldPlayerInputController
 {
     private PlayerController playerController;
     private float moveX;
@@ -28,7 +28,7 @@ public class PlayerInputController
     public bool AimHeld => aimHeld;
     public bool FireHeld => fireHeld;
 
-    public PlayerInputController(PlayerController player)
+    public OldPlayerInputController(PlayerController player)
     {
         playerController = player;
     }
