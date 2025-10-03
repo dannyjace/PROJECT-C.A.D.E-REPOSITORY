@@ -1,4 +1,4 @@
-using Player.Utilities;
+using RevolutionStudios.Player.Utilities;
 using UnityEngine;
 
 public class DynamicReticle : MonoBehaviour
@@ -10,7 +10,7 @@ public class DynamicReticle : MonoBehaviour
     [Space(5)]
     [SerializeField, Range(0, 10)] private float sizeSpeed;
 
-    private AdvancedPlayerController playerController;
+    private PlayerController playerController;
 
     private float targetSize;
 
@@ -31,9 +31,8 @@ public class DynamicReticle : MonoBehaviour
     private bool ApplyDynamics()
     {
         bool moving = playerController.InputController.MoveInput.magnitude > 0 || playerController.InputController.LookInput.magnitude > 0 || playerController.LocomotionState == PlayerLocomotionState.Sprinting || playerController.GroundedState == PlayerGroundedState.Airborne;
-        bool firing = playerController.GunManager.CurrentWeaponData && playerController.GunManager.CurrentWeaponData.ammoCur > 0 && playerController.InputController.FireHeld;
 
-        if (moving || firing)
+        if (moving)
         {
             return true;
         }

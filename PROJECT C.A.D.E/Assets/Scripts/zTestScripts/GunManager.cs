@@ -23,13 +23,13 @@ public class GunManager : MonoBehaviour
     private Vector3 targetRecoilRotation;
     private Vector3 targetRecoilPosition;
 
-    private AdvancedPlayerController playerController;
+    private PlayerController playerController;
 
     public WeaponData CurrentWeaponData => currentWeaponData;
 
     private void Start()
     {
-        playerController = GetComponent<AdvancedPlayerController>();
+        playerController = GetComponent<PlayerController>();
         HUDManager.instance.DeactivateAmmoUI();
     }
     private void Update()

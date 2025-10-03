@@ -1,10 +1,10 @@
 using UnityEngine;
-using Player.Utilities;
-using Player.Data;
+using RevolutionStudios.Player.Utilities;
+using RevolutionStudios.Player.Data;
 
 public class PlayerMovementController
 {
-    private readonly AdvancedPlayerController playerController;
+    private readonly PlayerController playerController;
     private readonly PlayerInputController inputController;
     private readonly PlayerMovementControllerData movementControllerData;
     private readonly CharacterController characterController;
@@ -12,7 +12,7 @@ public class PlayerMovementController
     private int jumpCount;
     private bool canSprint;
 
-    public PlayerMovementController(AdvancedPlayerController player, PlayerMovementControllerSettings settings)
+    public PlayerMovementController(PlayerController player, PlayerMovementControllerSettings settings)
     {
         playerController = player;
         inputController = player.InputController;
@@ -62,15 +62,15 @@ public class PlayerMovementController
     }
     private void UpdatePlayerAimingState()
     {
-        if (inputController.AimHeld && playerController.GunManager.weaponList.Count > 0)
+        if (inputController.AimHeld)
         {
             playerController.AimingState = PlayerAimingState.Active;
-            HUDManager.instance.Reticle.SetActive(false);
+            //HUDManager.instance.Reticle.SetActive(false);
         }
         else
         {
             playerController.AimingState = PlayerAimingState.Inactive;
-            HUDManager.instance.Reticle.SetActive(true);
+            //HUDManager.instance.Reticle.SetActive(true);
         }
     }
 
@@ -118,12 +118,12 @@ public class PlayerMovementController
     }
     private void UpdateCanSprint()
     {
-        if (playerController.Stamina >= playerController.InitialStamina && playerController.AimingState == PlayerAimingState.Inactive)
+        if (playerController.AttributeController.CurrentStamina >= playerController.AttributeController.InitialStamina && playerController.AimingState == PlayerAimingState.Inactive)
         {
             canSprint = true;
         }
         
-        if (playerController.Stamina < 1 || playerController.AimingState == PlayerAimingState.Active)
+        if (playerController.AttributeController.CurrentStamina < 1 || playerController.AimingState == PlayerAimingState.Active)
         {
             canSprint = false;
         }

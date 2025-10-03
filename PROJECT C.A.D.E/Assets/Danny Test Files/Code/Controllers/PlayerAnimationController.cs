@@ -1,10 +1,10 @@
-using Player.Data;
-using Player.Utilities;
+using RevolutionStudios.Player.Utilities;
+using RevolutionStudios.Player.Data;
 using UnityEngine;
 
 public class PlayerAnimationController 
 {
-    private readonly AdvancedPlayerController playerController;
+    private readonly PlayerController playerController;
     private readonly PlayerInputController inputController;
     private readonly PlayerAnimationControllerSettings animationControllerSettings;
     private readonly Animator animator;
@@ -28,7 +28,7 @@ public class PlayerAnimationController
     private Vector3 targetPosePosition;
     private Vector3 targetPoseRotation;
 
-    public PlayerAnimationController(AdvancedPlayerController player, PlayerAnimationControllerSettings settings)
+    public PlayerAnimationController(PlayerController player, PlayerAnimationControllerSettings settings)
     {
         playerController = player;
         inputController = player.InputController;
@@ -94,14 +94,7 @@ public class PlayerAnimationController
     }
     private float GetTargetAimingMultiplier()
     {
-        if (playerController.GunManager.weaponList.Count > 0)
-        {
-            return playerController.AimingState == PlayerAimingState.Active ? 0.25f : 1f;
-        }
-        else
-        {
-            return 1;
-        }
+        return playerController.AimingState == PlayerAimingState.Active ? 0.25f : 1f;
     }
 
     private void LateUpdateSway(Transform swayPivot, Vector2 moveInput, Vector2 lookInput, PlayerAnimationControllerData data)
@@ -137,11 +130,15 @@ public class PlayerAnimationController
     {
         if (playerController.AimingState == PlayerAimingState.Active)
         {
+            /*
+
             if (playerController.GunManager.weaponList.Count > 0)
             {
                 targetPosePosition = playerController.GunManager.CurrentWeaponData.aimingPosePosition;
                 targetPoseRotation = playerController.GunManager.CurrentWeaponData.aimingPoseRotation;
             }
+
+            */
         }
         else
         {

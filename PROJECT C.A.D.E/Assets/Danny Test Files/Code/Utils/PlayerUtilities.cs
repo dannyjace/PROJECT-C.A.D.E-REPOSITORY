@@ -1,7 +1,7 @@
-using Player.Data;
+using RevolutionStudios.Player.Data;
 using UnityEngine;
 
-namespace Player.Utilities
+namespace RevolutionStudios.Player.Utilities
 {
     public enum PlayerGroundedState
     {
@@ -89,6 +89,28 @@ namespace Player.Utilities
         [Space(10)]
         public Transform weaponRecoilPivotTransform;
     }
+
+    [System.Serializable]
+    public struct PlayerAttributeControllerSettings
+    {
+        [Header("CONTROLLER DATA")]
+        [Space(10)]
+        public PlayerAttributeControllerData data;
+    }
+
+    [System.Serializable]
+    public struct PlayerAudioControllerSettings
+    {
+        [Header("CONTROLLER DATA")]
+        [Space(10)]
+        public PlayerAudioControllerData data;
+        [Space(20)]
+
+        [Header("REFERENCES")]
+        [Space(10)]
+        public AudioSource footStepAudioSource;
+    }
+
 
 
     public static class PlayerUtilities { }

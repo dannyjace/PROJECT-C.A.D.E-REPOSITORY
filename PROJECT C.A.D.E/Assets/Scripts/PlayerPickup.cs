@@ -59,7 +59,7 @@ public class PlayerPickup : MonoBehaviour, IInteractable
 
         //else if (GameManager.instance.playerScript.HasItem(item))
         //    GameManager.instance.UpdateInteractPrompt("You already own the " + item.name);
-        GameManager.instance.playerScript.ApplyUpgradeNow(pickup, itemType);
+        //GameManager.instance.playerScript.ApplyUpgradeNow(pickup, itemType);
         Destroy(gameObject);
         HUDManager.instance.UpdateInteractPrompt("");
     }

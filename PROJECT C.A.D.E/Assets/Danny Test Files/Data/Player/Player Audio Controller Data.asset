@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee057a77326de454596ab151ce81b64e, type: 3}
+  m_Name: Player Audio Controller Data
+  m_EditorClassIdentifier: Assembly-CSharp::RevolutionStudios.Player.Data.PlayerAudioControllerData
+  defaultStepClips:
+  - {fileID: 8300000, guid: 843ff606e4dfa474d9500cef230bc23a, type: 3}
+  - {fileID: 8300000, guid: 50e22886428aee245a18f92f788d79da, type: 3}
+  - {fileID: 8300000, guid: 0c889e6a1efa5614a918e1b4b466be74, type: 3}
+  - {fileID: 8300000, guid: 96f080478e3c0744ea84c8a24667c64a, type: 3}
+  - {fileID: 8300000, guid: 9d1efeb94318d8743b5ed2c0bf8a0c1c, type: 3}
+  - {fileID: 8300000, guid: be22b60a162c0bc46a3a012964ae97e8, type: 3}
+  - {fileID: 8300000, guid: 72bf6fa3df84c274e8d0a4d0a1075ef9, type: 3}
+  - {fileID: 8300000, guid: 93f1fd9324104854aae4f0ff14a29be6, type: 3}
+  - {fileID: 8300000, guid: 3669b73dce3956849b2b9ceebe937383, type: 3}
+  stepVolume: 0.005

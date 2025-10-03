@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Player.Data
+namespace RevolutionStudios.Player.Data
 {
-    [CreateAssetMenu(fileName = "New Player Animation Controller Data", menuName = "Player/Data/Animation Controller Data")]
+    [CreateAssetMenu(fileName = "New Player Animation Controller Data", menuName = "Revolution Studios/Data/Player/Animation Controller Data")]
     public class PlayerAnimationControllerData : ScriptableObject
     {
         [Header("Animator Properties")]
@@ -19,7 +19,7 @@ namespace Player.Data
         [Range(0, 5f)] public float idleBobbingFrequency;
         [Range(0, 100f)] public float idleBobbingAmplitude;
         [Space(5)]
-        [Range(0, 15f)] public float movingBobbingFrequency;
+        [Range(0, 20f)] public float movingBobbingFrequency;
         [Range(0, 250f)] public float movingBobbingAmplitude;
         [Space(5)]
         [Range(0, 25f)] public float sprintingBobbingFrequency;

@@ -31,7 +31,7 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] private List<Spawner> spawnerStack;
     public List<Spawner> SpawnerStack => spawnerStack;
-    [SerializeField] private AdvancedPlayerController playerController;
+    [SerializeField] private PlayerController playerController;
 
 
     public bool isSpawning = false;
