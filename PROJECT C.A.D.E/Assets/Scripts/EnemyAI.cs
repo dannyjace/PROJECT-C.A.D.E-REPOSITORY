@@ -190,7 +190,6 @@ public class EnemyAI : MonoBehaviour, IDamage
     {
         shootTimer = 0;
         animator.SetTrigger("Shoot");
-        SoundManager.instance.playEnemyShootSound(shootPos);
     }
 
     public void CreateBullet()

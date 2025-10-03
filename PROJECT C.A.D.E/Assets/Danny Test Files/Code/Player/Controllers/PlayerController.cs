@@ -18,11 +18,9 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField] private PlayerAttributeControllerSettings attributeControllerSettings;
     [Space(10)]
     [SerializeField] private PlayerAudioControllerSettings audioControllerSettings;
-    [Space(20)]
+    
 
-    [Header("INVENTORY SETTINGS")]
-    [Space(10)]
-    public List<inventoryItem> inventory = new List<inventoryItem>();
+ 
 
     #endregion
 
@@ -106,24 +104,13 @@ public class PlayerController : MonoBehaviour, IDamage
     }
     public IEnumerator FlashDamageScreen()
     {
-        HUDManager.instance.playerDamageScreen.SetActive(true);
+        
         yield return new WaitForSeconds(0.1f);
-        HUDManager.instance.playerDamageScreen.SetActive(false);
+        
     }
 
 
-    public bool HasItem(inventoryItem item)
-    {
-        return inventory.Contains(item);
-    }
-    public void AddItem(inventoryItem item)
-    {
-        if (!inventory.Contains(item))
-        {
-            inventory.Add(item);
-            Debug.Log("Item added to inventory");
-        }
-    }
+
 
     public void SpawnPlayer()
     {
