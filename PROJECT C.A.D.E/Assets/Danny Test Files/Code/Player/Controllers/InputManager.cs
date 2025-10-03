@@ -23,6 +23,8 @@ namespace RevolutionStudios.GameManagement
         public event Action OnPlayerFireCanceled = delegate { };
         public event Action OnPlayerPausePerformed = delegate { };
 
+        public event Action OnPlayerInteractPerformed = delegate { };
+
         public Vector2 MoveInput => inputMaster.PlayerControls.Move.ReadValue<Vector2>();
         public Vector2 LookInput => inputMaster.PlayerControls.Look.ReadValue<Vector2>();
 
@@ -91,6 +93,13 @@ namespace RevolutionStudios.GameManagement
                 OnPlayerPausePerformed.Invoke();
             }
         }
+        public void OnInteract(InputAction.CallbackContext context)
+        {
+            if(context.performed)
+            {
+                OnPlayerInteractPerformed?.Invoke();
+            }
+        }
 
 
         public void InitializeInputManager()
@@ -121,5 +130,7 @@ namespace RevolutionStudios.GameManagement
             inputMaster.PlayerControls.Disable();
             inputMaster.UserInterfaceControls.Enable();
         }
+
+        
     }
 }

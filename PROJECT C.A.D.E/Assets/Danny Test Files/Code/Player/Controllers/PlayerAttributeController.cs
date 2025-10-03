@@ -1,6 +1,7 @@
-using RevolutionStudios.Player.Utilities;
 using RevolutionStudios.Player.Data;
+using RevolutionStudios.Player.Utilities;
 using UnityEngine;
+using UnityEngine.InputSystem.XInput;
 
 public class PlayerAttributeController
 {
@@ -49,7 +50,6 @@ public class PlayerAttributeController
     public void Update()
     {
         UpdateStamina();
-        UpdateInteraction();
     }
 
 
@@ -64,21 +64,16 @@ public class PlayerAttributeController
             currentStamina += (int)(attributeControllerData.staminaRegenerationRate * Time.deltaTime);
         }
     }
-    private void UpdateInteraction()
+    public void OnPlayerInteract()
     {
-        /*
-
-        if (inputController.InteractHeld)
+        if (Physics.Raycast(playerController.PlayerCamera.transform.position, playerController.PlayerCamera.transform.forward, out RaycastHit hit, attributeControllerData.interactionRange, ~attributeControllerData.interactionIgnoreLayer))
         {
-            if (Physics.Raycast(playerController.PlayerCamera.transform.position, playerController.PlayerCamera.transform.forward, out RaycastHit hit, attributeControllerData.interactionRange, ~attributeControllerData.interactionIgnoreLayer))
-            {
-                IInteractable target = hit.collider.GetComponent<IInteractable>();
+            IInteractable target = hit.collider.GetComponent<IInteractable>();
 
-                target?.Interact();
-            }
+            Debug.Log(hit.collider.name);
+
+            target?.Interact();
         }
-
-        */
     }
     public void AddExperience(int amount)
     {
