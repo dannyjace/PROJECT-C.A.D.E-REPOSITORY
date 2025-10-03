@@ -76,11 +76,13 @@ public class PlayerController : MonoBehaviour, IDamage
     {
         GameManager.instance.InputManager.OnPlayerJumpPerformed += OnPlayerJump;
         GameManager.instance.InputManager.OnPlayerSprintPerformed += OnPlayerSprint;
+        GameManager.instance.InputManager.OnPlayerInteractPerformed += OnPlayerInteract;
     }
     private void UnsubscribeToInputEvents()
     {
         GameManager.instance.InputManager.OnPlayerJumpPerformed -= OnPlayerJump;
         GameManager.instance.InputManager.OnPlayerSprintPerformed -= OnPlayerSprint;
+        GameManager.instance.InputManager.OnPlayerInteractPerformed -= OnPlayerInteract;
     }
 
 
@@ -101,6 +103,7 @@ public class PlayerController : MonoBehaviour, IDamage
     {
         AudioController.PlayFootStepAudio();
     }
+
 
 
     private void Start()
@@ -128,6 +131,11 @@ public class PlayerController : MonoBehaviour, IDamage
     private void OnDisable()
     {
         UnsubscribeToInputEvents();
+    }
+
+    private void OnPlayerInteract()
+    {
+        AttributeController.OnPlayerInteract();
     }
 
     private void OnPlayerJump()
