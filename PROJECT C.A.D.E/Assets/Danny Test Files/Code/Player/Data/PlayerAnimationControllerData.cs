@@ -20,10 +20,10 @@ namespace RevolutionStudios.Player.Data
         [Range(0, 100f)] public float idleBobbingAmplitude;
         [Space(5)]
         [Range(0, 20f)] public float movingBobbingFrequency;
-        [Range(0, 250f)] public float movingBobbingAmplitude;
+        [Range(0, 500f)] public float movingBobbingAmplitude;
         [Space(5)]
         [Range(0, 25f)] public float sprintingBobbingFrequency;
-        [Range(0, 250f)] public float sprintingBobbingAmplitude;
+        [Range(0, 500f)] public float sprintingBobbingAmplitude;
         [Space(20)]
 
         [Header("Procedural Sway Properties")]

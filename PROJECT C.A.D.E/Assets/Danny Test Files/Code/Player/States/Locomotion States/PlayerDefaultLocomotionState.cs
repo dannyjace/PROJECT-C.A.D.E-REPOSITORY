@@ -8,16 +8,12 @@ namespace RevolutionStudios.Player.StateMachine
         public override void OnEnterState()
         {
             Context.LocomotionState = PlayerLocomotionState.Default;
-
-            //Context.CameraController.UpdateCameraRigYOffset();
         }
         public override void OnUpdateState()
         {
-            Context.LocomotionState = Context.MovementController.GetLocomotionState();
-
             if (Context.LocomotionState == PlayerLocomotionState.Sprinting)
             {
-                Context.LocomotionStateMachine.ChangeState<PlayerSprintingLocomotionState>();
+                //Context.LocomotionStateMachine.ChangeState<PlayerSprintingLocomotionState>();
             }
         }
         public override void OnLateUpdateState()

@@ -10,8 +10,6 @@ public class DynamicReticle : MonoBehaviour
     [Space(5)]
     [SerializeField, Range(0, 10)] private float sizeSpeed;
 
-    private PlayerController playerController;
-
     private float targetSize;
 
     private void UpdateReticleSize()
@@ -27,10 +25,9 @@ public class DynamicReticle : MonoBehaviour
 
         reticle.sizeDelta = Vector2.Lerp(reticle.sizeDelta, new(targetSize, targetSize), Time.deltaTime * sizeSpeed);
     }
-
     private bool ApplyDynamics()
     {
-        bool moving = playerController.InputController.MoveInput.magnitude > 0 || playerController.InputController.LookInput.magnitude > 0 || playerController.LocomotionState == PlayerLocomotionState.Sprinting || playerController.GroundedState == PlayerGroundedState.Airborne;
+        bool moving = GameManager.instance.InputManager.MoveInput.magnitude > 0 || GameManager.instance.InputManager.LookInput.magnitude > 0 || GameManager.instance.PlayerController.LocomotionState == PlayerLocomotionState.Sprinting || GameManager.instance.PlayerController.GroundedState == PlayerGroundedState.Airborne;
 
         if (moving)
         {
@@ -42,10 +39,6 @@ public class DynamicReticle : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        playerController = GameManager.instance.playerScript;
-    }
     private void Update()
     {
         UpdateReticleSize();

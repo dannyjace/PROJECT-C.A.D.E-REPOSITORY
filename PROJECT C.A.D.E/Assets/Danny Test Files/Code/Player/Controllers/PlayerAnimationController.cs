@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerAnimationController 
 {
     private readonly PlayerController playerController;
-    private readonly PlayerInputController inputController;
     private readonly PlayerAnimationControllerSettings animationControllerSettings;
     private readonly Animator animator;
     private readonly Transform rightHandIK;
@@ -31,7 +30,6 @@ public class PlayerAnimationController
     public PlayerAnimationController(PlayerController player, PlayerAnimationControllerSettings settings)
     {
         playerController = player;
-        inputController = player.InputController;
 
         animationControllerSettings = settings;
         animator = settings.animator;
@@ -44,12 +42,15 @@ public class PlayerAnimationController
     public void Update()
     {
         UpdateAnimator();
-        UpdateTargetBobbingValues(inputController.MoveInput, animationControllerSettings.data);
+        UpdateTargetBobbingValues(GameManager.instance.InputManager.MoveInput, animationControllerSettings.data);
     }
     public void LateUpdate()
     {
-        LateUpdateSway(animationControllerSettings.swayPivotTransform, inputController.MoveInput, inputController.LookInput, animationControllerSettings.data);
-        LateUpdateBobbing(animationControllerSettings.bobbingPivotTransform, inputController.MoveInput);
+        var moveInput = GameManager.instance.InputManager.MoveInput;
+        var lookInput = GameManager.instance.InputManager.LookInput;
+
+        LateUpdateSway(animationControllerSettings.swayPivotTransform, moveInput, lookInput, animationControllerSettings.data);
+        LateUpdateBobbing(animationControllerSettings.bobbingPivotTransform, moveInput);
         LateUpdatePose(animationControllerSettings.posePositionPivotTransform, animationControllerSettings.poseRotationPivotTransform, animationControllerSettings.data);
         LateUpdateHandIK(leftHandIKTarget);
     }
@@ -64,11 +65,11 @@ public class PlayerAnimationController
     {
         animator.SetBool("Grounded", playerController.GroundedState == PlayerGroundedState.Grounded);
 
-        animator.SetFloat("Movement X", inputController.MoveX, animationControllerSettings.data.animatorMoveSmoothing, Time.deltaTime);
-        animator.SetFloat("Movement Y", inputController.MoveY, animationControllerSettings.data.animatorMoveSmoothing, Time.deltaTime);
+        animator.SetFloat("Movement X", GameManager.instance.InputManager.MoveInput.x, animationControllerSettings.data.animatorMoveSmoothing, Time.deltaTime);
+        animator.SetFloat("Movement Y", GameManager.instance.InputManager.MoveInput.y, animationControllerSettings.data.animatorMoveSmoothing, Time.deltaTime);
 
-        float lookX = inputController.LookX;
-        float lookY = inputController.LookY * (playerController.CameraSensitivity.y / 2) * Time.deltaTime;
+        float lookX = GameManager.instance.InputManager.LookInput.x;
+        float lookY = GameManager.instance.InputManager.LookInput.y * (playerController.CameraSensitivity.y / 2) * Time.deltaTime;
 
         animatorLookXAngle += lookY;
         animatorLookXAngle = Mathf.Clamp(animatorLookXAngle, playerController.CameraRotationClamp.x, playerController.CameraRotationClamp.y);

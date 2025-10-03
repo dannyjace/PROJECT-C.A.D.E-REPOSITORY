@@ -7,13 +7,14 @@ namespace RevolutionStudios.Player.StateMachine
     {
         public override void OnEnterState()
         {
-            Context.AimingState = PlayerAimingState.Inactive;
 
-            //Context.InputController.AimHeld += OnAim;
         }
         public override void OnUpdateState()
         {
-            
+            if (Context.AimingState == PlayerAimingState.Active)
+            {
+                //Context.AimingStateMachine.ChangeState<PlayerActiveAimingState>();
+            }
         }
         public override void OnLateUpdateState()
         {
@@ -25,14 +26,7 @@ namespace RevolutionStudios.Player.StateMachine
         }
         public override void OnExitState()
         {
-            //Context.InputController.AimHeld -= OnAim;
-        }
-
-        private void OnAim(bool active = true)
-        {
-            //Context.AnimationController.SetTargetLookIKDampTime(0.25f);
-            //Context.AnimationController.SetAimingWeight(1);
-            //Context.AimingStateMachine.ChangeState<PlayerActiveAimingState>();
+            
         }
     }
 }

@@ -104,7 +104,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Color_Threshold: 0.5
+    - _Color_Threshold: 1.5
     - _Cull: 2
     - _Cutoff: 0.5
     - _Depth_Fade_Distance: 1500
@@ -120,7 +120,7 @@ Material:
     - _Normal_Threshold: 0.25
     - _OVERLAY: 1
     - _OcclusionStrength: 1
-    - _Outline_Thickness: 0.5
+    - _Outline_Thickness: 0.55
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0

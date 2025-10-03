@@ -30,7 +30,7 @@
                     "id": "e290de63-e604-4c5f-9eac-c72e95b8a319",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Tap",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
@@ -297,6 +297,34 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "User Interface Controls",
+            "id": "bfc6d8a8-1854-4918-8425-d952ecc16dec",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "1209ca2a-1ae0-455d-81e8-a018611b64c2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5c56de12-c5b2-43a1-9ba1-07ca790dff88",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
