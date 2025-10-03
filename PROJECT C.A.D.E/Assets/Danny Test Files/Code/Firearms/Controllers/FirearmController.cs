@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.VFX;
+using UnityEngine.Pool;
 
 public class FirearmController : MonoBehaviour
 {
     [Header("Firearm Data")]
     [Space(10)]
-    [SerializeField] private FIrearmData data;
+    [SerializeField] private FirearmData data;
     [Space(20)]
 
     [Header("References")]
@@ -16,6 +17,9 @@ public class FirearmController : MonoBehaviour
     [SerializeField] private ParticleSystem muzzleSmokeVFX;
     [SerializeField] private VisualEffect ejectionPortSmokeVFX;
     [SerializeField] private ParticleSystem ejectionPortShellVFX;
+
+
+    private FirearmAttachmentController attachmentController;
 
     private bool aiming;
     private bool firing;
@@ -54,8 +58,12 @@ public class FirearmController : MonoBehaviour
 
     private void InitializeFirearm()
     {
+        attachmentController = GetComponent<FirearmAttachmentController>();
+
         recoilPivot = GameManager.instance.PlayerController.WeaponRecoilPivot;
         masterIKTransform = GameManager.instance.PlayerController.MasterIK;
+
+        InitializeProjectilePool();
     }
     private void UpdateFirearm()
     {
@@ -73,6 +81,9 @@ public class FirearmController : MonoBehaviour
     }
     private void PerformFire()
     {
+        InstantiateProjectile();
+
+
         if (data.ejectOnFire)
         {
             //ejectionPortShellVFX.Emit(1);
@@ -103,6 +114,43 @@ public class FirearmController : MonoBehaviour
     {
         targetRecoilRotation = new(data.recoilXRotationMultiplier, Random.Range(-data.recoilYRotationMultiplier, data.recoilYRotationMultiplier), Random.Range(-data.recoilZRotationMultiplier, data.recoilZRotationMultiplier));
         targetRecoilPosition = new(Random.Range(-data.recoilXPositionMultiplier, data.recoilXPositionMultiplier), data.recoilYPositionMultiplier, data.recoilZPositionMultiplier);
+    }
+    private Projectile CreateProjectile()
+    {
+        var projectile = Instantiate(data.projectilePrefab, Vector3.zero, Quaternion.identity, attachmentController.CurrentMuzzle.transform);
+        projectile.GetComponent<Projectile>().SetProjectilePool(data.projectilePool);
+
+        return projectile.GetComponent<Projectile>();
+    }
+    private void OnTakeProjectileFromPool(Projectile projectile)
+    {
+        projectile.gameObject.SetActive(true);
+        projectile.transform.SetParent(attachmentController.CurrentMuzzle.transform);
+        projectile.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+    }
+    private void OnReturnProjectileToPool(Projectile projectile)
+    {
+        projectile.transform.SetParent(attachmentController.CurrentMuzzle.transform);
+        projectile.transform.SetPositionAndRotation(Vector3.zero, Quaternion.identity);
+        projectile.gameObject.SetActive(false);
+    }
+    private void InitializeProjectilePool()
+    {
+        data.projectilePool = new ObjectPool<Projectile>(CreateProjectile, OnTakeProjectileFromPool, OnReturnProjectileToPool, defaultCapacity: 30, maxSize: 60);
+
+        for (int i = 0; i < data.activePoolCount; i++)
+        {
+            CreateProjectile().ReleaseProjectileToPool();
+        }
+    }
+    private void InstantiateProjectile()
+    {
+        var projectile = data.projectilePool.Get();
+        projectile.transform.SetParent(attachmentController.CurrentMuzzle.transform);
+        projectile.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+
+        projectile.GetComponent<Rigidbody>().AddForce(GameManager.instance.PlayerController.MasterIK.forward * Time.deltaTime * data.projectileSpeed, ForceMode.Impulse);
+        projectile.transform.SetParent(null);
     }
 
 

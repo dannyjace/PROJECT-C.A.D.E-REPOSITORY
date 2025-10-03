@@ -1,15 +1,27 @@
 using UnityEngine;
+using UnityEngine.Pool;
 
 [CreateAssetMenu(fileName = "New Firearm Data", menuName = "Revolution Studios/Data/Firearms/New Firearm Data")]
 
-public class FIrearmData : ScriptableObject
+public class FirearmData : ScriptableObject
 {
+    public enum FirearmType { Handgun, }
+
     [Header("Firearm Settings")]
     [Space(10)]
-    [SerializeField, Range(0.01f, 1f)] public float fireRate;
+    [Range(0.01f, 1f)] public float fireRate;
     [Space(10)]
-    [SerializeField] public bool ejectOnFire;
+    public bool ejectOnFire;
     [Space(20)]
+
+    [Header("Projectile Settings")]
+    [Space(10)]
+    public GameObject projectilePrefab;
+    public float projectileSpeed;
+    [Space(10)]
+    public ObjectPool<Projectile> projectilePool;
+    public int activePoolCount;
+    public int inactivePoolCount;
 
     [Header("Pose Settings")]
     [Space(10)]
