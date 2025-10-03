@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: Player Animation Controller Data
   m_EditorClassIdentifier: 
   animatorMoveSmoothing: 0.05
-  animatorLookSmoothing: 0.1
-  animatorSprintWeightSmoothing: 0.1
+  animatorLookSmoothing: 0.15
+  animatorSprintWeightSmoothing: 0.15
   idleBobbingFrequency: 1
   idleBobbingAmplitude: 25
   movingBobbingFrequency: 18.5
-  movingBobbingAmplitude: 100
+  movingBobbingAmplitude: 75
   sprintingBobbingFrequency: 20
-  sprintingBobbingAmplitude: 300
+  sprintingBobbingAmplitude: 500
   swaySpeedMultiplier: {x: 10, y: 5, z: 4}
   lookSwayRotationMultiplier: {x: -2.5, y: 2, z: -1}
   lookSwayPositionMultiplier: {x: 3, y: 1.5, z: 10}
-  posePositionSpeed: 8
-  poseRotationSpeed: 6.5
+  posePositionSpeed: 6
+  poseRotationSpeed: 8
   defaultPosePosition: {x: 0.15, y: -0.165, z: 0.125}
   defaultPoseRotation: {x: 0, y: 0, z: 0}
-  sprintPosePosition: {x: 0.2, y: -0.2, z: 0.15}
-  sprintPoseRotation: {x: 15, y: -40, z: 10}
+  sprintPosePosition: {x: 0.2, y: -0.25, z: 0.1}
+  sprintPoseRotation: {x: 20, y: -45, z: 10}

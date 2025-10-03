@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
         instance = this;
 
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

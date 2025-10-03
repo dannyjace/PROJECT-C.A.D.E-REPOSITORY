@@ -68,6 +68,8 @@ public class PlayerAnimationController
         animator.SetFloat("Movement X", GameManager.instance.InputManager.MoveInput.x, animationControllerSettings.data.animatorMoveSmoothing, Time.deltaTime);
         animator.SetFloat("Movement Y", GameManager.instance.InputManager.MoveInput.y, animationControllerSettings.data.animatorMoveSmoothing, Time.deltaTime);
 
+        animator.SetFloat("Movement Speed Multiplier", playerController.GroundedState == PlayerGroundedState.Grounded ? 1 : 0.25f, 0.1f, Time.deltaTime);
+
         float lookX = GameManager.instance.InputManager.LookInput.x;
         float lookY = GameManager.instance.InputManager.LookInput.y * (playerController.CameraSensitivity.y / 2) * Time.deltaTime;
 

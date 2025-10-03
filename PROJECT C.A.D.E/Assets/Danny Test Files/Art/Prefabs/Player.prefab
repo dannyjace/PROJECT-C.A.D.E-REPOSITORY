@@ -1180,11 +1180,11 @@ MonoBehaviour:
     data: {fileID: 11400000, guid: 12f013482bfefc74aabe15ce4f6710fb, type: 2}
     animator: {fileID: 6508621990040107361}
     animatorLookAtTransform: {fileID: 6979323102074976511}
-    masterIKTransform: {fileID: 6227963766440761308}
+    masterIKTransform: {fileID: 7944872412303485396}
     handIKTransform: {fileID: 7539296409951790160}
     rightHandIKTransform: {fileID: 6279364773359847725}
     leftHandIKTransform: {fileID: 6994351205837045299}
-    leftHandIKTargetTransform: {fileID: 8817771549433802023}
+    leftHandIKTargetTransform: {fileID: 3725541252070938563}
     bobbingPivotTransform: {fileID: 5842205586625496803}
     swayPivotTransform: {fileID: 4409903783117718523}
     posePositionPivotTransform: {fileID: 728456989726835501}
@@ -5028,12 +5028,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1e95e2a83642c4fba7d8a9f4758064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirearmController
+  data: {fileID: 11400000, guid: 7e1e61b613e567d40b98d1389a555b83, type: 2}
   leftHandIKTransform: {fileID: 3725541252070938563}
   muzzleFlashVFX: {fileID: 410187257235106457}
   muzzleSmokeVFX: {fileID: 3014972570737653722}
   ejectionPortSmokeVFX: {fileID: 1580457682913038886}
   ejectionPortShellVFX: {fileID: 3794201511367068740}
-  fireRate: 0.25
 --- !u!1 &6843325328846742098
 GameObject:
   m_ObjectHideFlags: 0
