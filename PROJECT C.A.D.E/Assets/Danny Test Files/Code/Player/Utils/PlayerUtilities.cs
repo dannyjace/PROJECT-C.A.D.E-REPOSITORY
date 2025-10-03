@@ -13,6 +13,12 @@ namespace RevolutionStudios.Player.Utilities
         Default = 1,
         Sprinting = 2,
     }
+    public enum PlayerStanceState
+    {
+        Standing = 1,
+        Crouching = 2,
+        Prone = 3
+    }
     public enum PlayerAimingState
     {
         Inactive,
@@ -46,6 +52,8 @@ namespace RevolutionStudios.Player.Utilities
         public PlayerGroundedState groundedState;
         [Space(5)]
         public PlayerLocomotionState locomotionState;
+        [Space(5)]
+        public PlayerStanceState stanceState;
         [Space(5)]
         public PlayerAimingState aimingState;
     }

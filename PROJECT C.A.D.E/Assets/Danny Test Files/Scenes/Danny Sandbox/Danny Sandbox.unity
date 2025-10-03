@@ -992,6 +992,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 802786496323082069, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
+      propertyPath: inputControllerSettings.data
+      value: 
+      objectReference: {fileID: 11400000, guid: a2fc4dad18ab80e4cb6b7dbf11876942, type: 2}
     - target: {fileID: 834598213408469237, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
       propertyPath: m_Layer
       value: 3

@@ -9,8 +9,6 @@ namespace RevolutionStudios.Player.Data
     [CreateAssetMenu(fileName = "New Player Input Controller Data", menuName = "Revolution Studios/Data/Player/Input Controller Data")]
     public class PlayerInputControllerData : ScriptableObject, IPlayerControlsActions
     {
-        #region Input Controller Fields
-
         private InputMaster inputMaster;
 
         public Vector2 MovementInput => inputMaster.PlayerControls.Move.ReadValue<Vector2>();
@@ -22,9 +20,10 @@ namespace RevolutionStudios.Player.Data
         public float LookX => inputMaster.PlayerControls.Look.ReadValue<Vector2>().x;
         public float LookY => inputMaster.PlayerControls.Look.ReadValue<Vector2>().y;
 
-        #endregion
+        public bool isSprinting { get; private set; }
+        public bool isAiming { get; private set; }
 
-        #region Input Controller Events
+
 
         public event UnityAction<Vector2> Move = delegate { };
         public event UnityAction<Vector2> Look = delegate { };
@@ -38,9 +37,6 @@ namespace RevolutionStudios.Player.Data
 
         public event UnityAction Pause = delegate { };
 
-        #endregion
-
-        #region Input Action Events
 
         public void OnLook(InputAction.CallbackContext context)
         {
@@ -61,7 +57,6 @@ namespace RevolutionStudios.Player.Data
             if (context.performed)
             {
                 Jump.Invoke();
-                Debug.Log("Jump Performed");
             }
         }
         public void OnStance(InputAction.CallbackContext context)
@@ -69,32 +64,36 @@ namespace RevolutionStudios.Player.Data
             if (context.performed)
             {
                 Stance.Invoke();
+                Sprint.Invoke(false);
+                isSprinting = false;
             }
         }
         public void OnSprint(InputAction.CallbackContext context)
         {
-            if (context.performed && MovementInput.normalized.magnitude > 0.1f)
+            if (context.performed && MovementInput.magnitude > 0.1f && !isAiming)
             {
                 Sprint.Invoke(true);
-                Debug.Log("Sprint Performed");
+                isSprinting = !isSprinting;
             }
-            else
+            else if (MovementInput.magnitude < 0.1f)
             {
                 Sprint.Invoke(false);
-                Debug.Log("Sprint Canceled");
+                isSprinting = false;
             }
         }
         public void OnAim(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
+                Sprint.Invoke(false);
+                isSprinting = false;
                 Aim.Invoke(true);
-                Debug.Log("Aim Performed");
+                isAiming = true;
             }
             else if (context.canceled)
             {
                 Aim.Invoke(false);
-                Debug.Log("Aim Canceled");
+                isAiming = false;
             }
         }
         public void OnFire(InputAction.CallbackContext context)
@@ -102,12 +101,12 @@ namespace RevolutionStudios.Player.Data
             if (context.performed)
             {
                 Fire.Invoke(true);
-                Debug.Log("Fire Performed");
+                Sprint.Invoke(false);
+                isSprinting = false;
             }
             else if (context.canceled)
             {
                 Fire.Invoke(false);
-                Debug.Log("Fire Canceled");
             }
         }
         public void OnPause(InputAction.CallbackContext context)
@@ -118,9 +117,6 @@ namespace RevolutionStudios.Player.Data
             }
         }
 
-        #endregion
-
-        #region Input Controller Methods
 
         public void InitializeInputMaster()
         {
@@ -132,7 +128,5 @@ namespace RevolutionStudios.Player.Data
 
             inputMaster.PlayerControls.Enable();
         }
-
-        #endregion
     }
 }

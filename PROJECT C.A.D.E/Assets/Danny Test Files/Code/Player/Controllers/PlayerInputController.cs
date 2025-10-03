@@ -11,6 +11,8 @@ public class PlayerInputController
     public Vector2 MoveInput => inputControllerData.MovementInput;
     public Vector2 LookInput => inputControllerData.LookInput;
 
+    public Vector3 MovementDirection => (MoveY * playerController.transform.forward) + (MoveX * playerController.transform.right);
+
     public float MoveX => inputControllerData.MoveX;
     public float MoveY => inputControllerData.MoveY;
 
@@ -26,10 +28,5 @@ public class PlayerInputController
     public void Initialize()
     {
         inputControllerData.InitializeInputMaster();
-    }
-
-    private void SubscribeToInputEvents()
-    {
-        
     }
 }

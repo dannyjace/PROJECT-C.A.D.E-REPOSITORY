@@ -10,7 +10,6 @@ public class PlayerMovementController
     private readonly CharacterController characterController;
     private Vector3 playerVelocity;
     private int jumpCount;
-    private bool canSprint;
 
     public PlayerMovementController(PlayerController player, PlayerMovementControllerSettings settings)
     {
@@ -22,12 +21,6 @@ public class PlayerMovementController
 
     public void Update()
     {
-        UpdateCanSprint();
-
-        UpdatePlayerGroundedState();
-        UpdatePlayerLocomotionState();
-        UpdatePlayerAimingState();
-
         UpdatePlayerMovement();
         UpdatePlayerRotation();
         UpdatePlayerJump();
@@ -38,59 +31,31 @@ public class PlayerMovementController
         DrawDebugGizmos();
     }
 
-    private void UpdatePlayerGroundedState()
+    public PlayerGroundedState GetGroundedState()
     {
         if (Physics.CheckSphere(playerController.transform.position + playerController.GroundCheckRadiusOffset, playerController.GroundCheckRadius, playerController.GroundLayer))
         {
-            playerController.GroundedState = PlayerGroundedState.Grounded;
+            return PlayerGroundedState.Grounded;
         }
         else
         {
-            playerController.GroundedState = PlayerGroundedState.Airborne;
+            return PlayerGroundedState.Airborne;
         }
     }
-    private void UpdatePlayerLocomotionState()
+    public PlayerLocomotionState GetLocomotionState()
     {
-        /*
-
-        if (playerController.GroundedState == PlayerGroundedState.Grounded && inputController.SprintHeld && canSprint)
-        {
-            playerController.LocomotionState = PlayerLocomotionState.Sprinting;
-        }
-        else
-        {
-            playerController.LocomotionState = PlayerLocomotionState.Default;
-        }
-
-        */
+        return PlayerLocomotionState.Default;
     }
-    private void UpdatePlayerAimingState()
+    public PlayerAimingState GetAimingState()
     {
-        /*
-
-        if (inputController.AimHeld)
-        {
-            playerController.AimingState = PlayerAimingState.Active;
-            //HUDManager.instance.Reticle.SetActive(false);
-        }
-        else
-        {
-            playerController.AimingState = PlayerAimingState.Inactive;
-            //HUDManager.instance.Reticle.SetActive(true);
-        }
-
-        */
+        return PlayerAimingState.Inactive;
     }
 
     private void UpdatePlayerMovement()
     {
-        /*
-
         Vector3 movementVector = inputController.MovementDirection * GetTargetMovementSpeed();
 
-        characterController.Move(movementVector * Time.deltaTime);
-
-        */
+        characterController.Move(movementVector * Time.deltaTime);     
     }
     private void UpdatePlayerRotation()
     {
@@ -135,18 +100,6 @@ public class PlayerMovementController
     private float GetTargetMovementSpeed()
     {
         return playerController.LocomotionState == PlayerLocomotionState.Sprinting ? playerController.SprintMovementSpeed : playerController.DefaultMovementSpeed;
-    }
-    private void UpdateCanSprint()
-    {
-        if (playerController.AttributeController.CurrentStamina >= playerController.AttributeController.InitialStamina && playerController.AimingState == PlayerAimingState.Inactive)
-        {
-            canSprint = true;
-        }
-        
-        if (playerController.AttributeController.CurrentStamina < 1 || playerController.AimingState == PlayerAimingState.Active)
-        {
-            canSprint = false;
-        }
     }
 
     private void DrawDebugGizmos()
