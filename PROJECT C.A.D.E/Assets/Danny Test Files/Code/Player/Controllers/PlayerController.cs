@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour, IDamage
 {
     #region PRIVATE PROPERTIES
 
+    [SerializeField] private PlayerInputControllerSettings inputControllerSettings;
+    [Space(10)]
     [SerializeField] private PlayerMovementControllerSettings movementControllerSettings;
     [Space(10)]
     [SerializeField] private PlayerCameraControllerSettings cameraControllerSettings;
@@ -71,18 +73,19 @@ public class PlayerController : MonoBehaviour, IDamage
 
     private void InitializeControllers()
     {
-        InputController = new PlayerInputController(this);
+        InputController = new PlayerInputController(this, inputControllerSettings);
         MovementController = new PlayerMovementController(this, movementControllerSettings);
         CameraController = new PlayerCameraController(this, cameraControllerSettings);
         AnimationController = new PlayerAnimationController(this, animationControllerSettings);
         AttributeController = new PlayerAttributeController(this, attributeControllerSettings);
         AudioController = new PlayerAudioController(this, audioControllerSettings);
 
+        InputController?.Initialize();
         AttributeController?.Initialize();
     }
     private void UpdateControllers()
     {
-        InputController?.Update();
+        //InputController?.Update();
         MovementController?.Update();
         CameraController?.Update();
         AnimationController?.Update();

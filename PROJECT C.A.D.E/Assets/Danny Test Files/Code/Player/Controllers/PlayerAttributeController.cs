@@ -73,6 +73,8 @@ public class PlayerAttributeController
     }
     private void UpdateInteraction()
     {
+        /*
+
         if (inputController.InteractHeld)
         {
             if (Physics.Raycast(playerController.PlayerCamera.transform.position, playerController.PlayerCamera.transform.forward, out RaycastHit hit, attributeControllerData.interactionRange, ~attributeControllerData.interactionIgnoreLayer))
@@ -82,6 +84,8 @@ public class PlayerAttributeController
                 target?.Interact();
             }
         }
+
+        */
     }
     public void AddExperience(int amount)
     {
