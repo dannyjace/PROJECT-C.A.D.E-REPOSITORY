@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4791691047440942167}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9914449, z: -0, w: 0.13052654}
+  m_LocalRotation: {x: 0, y: -0.9914449, z: 0, w: 0.13052626}
   m_LocalPosition: {x: 10.75996, y: 0.00000023841858, z: 15.020096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -50,6 +50,8 @@ MonoBehaviour:
   interactions:
   - {fileID: 0}
   - {fileID: 0}
+  hackMinigame: {fileID: 0}
+  textInput: {fileID: 0}
 --- !u!33 &1541676184874051878
 MeshFilter:
   m_ObjectHideFlags: 0

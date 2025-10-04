@@ -336,6 +336,7 @@ Transform:
   - {fileID: 1822924897560496174}
   - {fileID: 4331964751577619650}
   - {fileID: 6368368438021622696}
+  - {fileID: 6561521300173521731}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7551759316784731646
@@ -353,7 +354,7 @@ MonoBehaviour:
   moveDist: 1
   moveSpeed: 5
   moveDir: {x: 1, y: 0, z: 0}
-  doorCam: {fileID: 2421260647662521994}
+  doorCam: {fileID: 1463084534218012423}
   leftDoor: {fileID: 5799979965607621508}
   rightDoor: {fileID: 1499265636600576573}
 --- !u!33 &3581037706332776133
@@ -500,3 +501,78 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43574440244001996, guid: c86e9b8538e2fe14a96e9edc81705288, type: 2}
+--- !u!1 &7551101768499272596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6561521300173521731}
+  - component: {fileID: 1463084534218012423}
+  m_Layer: 0
+  m_Name: Door Cam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6561521300173521731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551101768499272596}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.20210359, y: 0, z: 0, w: 0.97936416}
+  m_LocalPosition: {x: -3.75, y: 2.729577, z: -3.901033}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3566384255578824263}
+  m_LocalEulerAnglesHint: {x: 23.32, y: 0, z: 0}
+--- !u!114 &1463084534218012423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7551101768499272596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
+  Priority:
+    Enabled: 1
+    m_Value: 0
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 0}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 60.000004
+    OrthographicSize: 5
+    NearClipPlane: 0.01
+    FarClipPlane: 100
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
