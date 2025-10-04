@@ -22,9 +22,6 @@ public class DoorMover : MonoBehaviour, IInteractable
 
     private bool isOpening = false;
 
-    
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         leftClosedPosition = leftDoor.transform.localPosition;
@@ -34,7 +31,6 @@ public class DoorMover : MonoBehaviour, IInteractable
         rightOpenPosition = rightClosedPosition + -moveDir * moveDist;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isOpening)
@@ -44,15 +40,9 @@ public class DoorMover : MonoBehaviour, IInteractable
         }
 
     }
-    
-    IEnumerator OpenDoor()
-    {
-        yield return new WaitForSeconds(delay);
-        isOpening = true;
-    }
 
     public void Interact()
     {
-        StartCoroutine(OpenDoor());
+        isOpening = true;
     }
 }

@@ -51,10 +51,11 @@ public class HackingTerminal : MonoBehaviour, IInteractable
         {
             CinemachineCamera cam =  interactions[i].GetComponentInChildren<CinemachineCamera>();
             IInteractable interactable = interactions[i].GetComponent<IInteractable>();
-
+            
             if (interactable != null && cam != null)
             {
-                cam.Priority = i + 11;
+                cam.Priority = i + 11; //default priority is currently 10. Look into changing it
+
                 yield return new WaitForSeconds(openDelay);
                 interactable.Interact();
             }

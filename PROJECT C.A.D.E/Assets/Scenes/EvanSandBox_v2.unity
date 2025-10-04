@@ -752,6 +752,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovableDoor_01
       objectReference: {fileID: 0}
+    - target: {fileID: 7551759316784731646, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
+      propertyPath: delay
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 908557937700010026, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
@@ -1507,6 +1511,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1163895794}
     - target: {fileID: 1618868690892803930, guid: 176070decfc46a9409bc1eed872122df, type: 3}
+      propertyPath: openDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618868690892803930, guid: 176070decfc46a9409bc1eed872122df, type: 3}
       propertyPath: textInput
       value: 
       objectReference: {fileID: 32480987}
@@ -1514,6 +1522,10 @@ PrefabInstance:
       propertyPath: hackMinigame
       value: 
       objectReference: {fileID: 2096061810}
+    - target: {fileID: 1618868690892803930, guid: 176070decfc46a9409bc1eed872122df, type: 3}
+      propertyPath: betweenDoorDelay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1618868690892803930, guid: 176070decfc46a9409bc1eed872122df, type: 3}
       propertyPath: 'interactions.Array.data[0]'
       value: 
