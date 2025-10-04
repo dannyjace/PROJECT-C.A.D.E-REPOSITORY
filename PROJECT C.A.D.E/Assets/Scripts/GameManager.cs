@@ -25,7 +25,14 @@ public class GameManager : MonoBehaviour
 
         instance = this;
 
+<<<<<<< Updated upstream
         //Application.targetFrameRate = 60;
+=======
+    public GameObject player;
+    public PlayerController playerScript;
+    public GameObject playerSpawnPos;
+    public GameObject checkpointPopup;
+>>>>>>> Stashed changes
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
