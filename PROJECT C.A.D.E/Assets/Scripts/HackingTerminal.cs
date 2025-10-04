@@ -6,7 +6,9 @@ using UnityEngine;
 public class HackingTerminal : MonoBehaviour, IInteractable
 {
     [SerializeField] GameObject[] interactions;
-    [SerializeField] float delay;
+    [SerializeField] float openDelay;
+    [SerializeField] float betweenDoorDelay;
+
 
     [Header("MINIGAME SETTINGS")]
     [SerializeField] GameObject hackMinigame;
@@ -52,10 +54,11 @@ public class HackingTerminal : MonoBehaviour, IInteractable
 
             if (interactable != null && cam != null)
             {
-                cam.Priority = i + 2;
+                cam.Priority = i + 11;
+                yield return new WaitForSeconds(openDelay);
                 interactable.Interact();
             }
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(betweenDoorDelay);
             cam.Priority = 0;
         }
 
