@@ -1,3 +1,4 @@
+using UnityEngine;
 using RevolutionStudios.Player.Utilities;
 using RevolutionStudios.StateMachine;
 
@@ -7,15 +8,13 @@ namespace RevolutionStudios.Player.StateMachine
     {
         public override void OnEnterState()
         {
-            Context.GroundedState = PlayerGroundedState.Grounded;
+            
         }
         public override void OnUpdateState()
         {
-            Context.GroundedState = Context.MovementController.GetGroundedState();
-
             if (Context.GroundedState == PlayerGroundedState.Airborne)
             {
-                Context.GroundedStateMachine.ChangeState<PlayerInactiveGroundedState>();
+                //Context.GroundedStateMachine.ChangeState<PlayerInactiveGroundedState>();
             }
         }
         public override void OnLateUpdateState()

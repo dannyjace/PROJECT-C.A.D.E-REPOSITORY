@@ -30,7 +30,7 @@
                     "id": "e290de63-e604-4c5f-9eac-c72e95b8a319",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Tap",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
@@ -81,7 +81,7 @@
                 {
                     "name": "Interact",
                     "type": "Button",
-                    "id": "71a23d5a-aba9-497f-8e2f-925a58308737",
+                    "id": "b06e72c5-0319-4374-b8a0-513367fbf7a5",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -311,12 +311,40 @@
                 },
                 {
                     "name": "",
-                    "id": "1734aa8b-25c9-4615-a881-ba190f91060d",
+                    "id": "de99a314-fc4a-4f1c-b9ab-09f45e7773ce",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "User Interface Controls",
+            "id": "bfc6d8a8-1854-4918-8425-d952ecc16dec",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "1209ca2a-1ae0-455d-81e8-a018611b64c2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5c56de12-c5b2-43a1-9ba1-07ca790dff88",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

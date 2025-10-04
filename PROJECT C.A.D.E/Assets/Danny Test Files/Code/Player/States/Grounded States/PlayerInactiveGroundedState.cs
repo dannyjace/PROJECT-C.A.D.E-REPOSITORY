@@ -7,15 +7,13 @@ namespace RevolutionStudios.Player.StateMachine
     {
         public override void OnEnterState()
         {
-            Context.GroundedState = PlayerGroundedState.Grounded;
+            
         }
         public override void OnUpdateState()
         {
-            Context.GroundedState = Context.MovementController.GetGroundedState();
-
             if (Context.GroundedState == PlayerGroundedState.Grounded)
             {
-                Context.GroundedStateMachine.ChangeState<PlayerActiveGroundedState>();
+                //Context.GroundedStateMachine.ChangeState<PlayerActiveGroundedState>();
             }
         }
         public override void OnLateUpdateState()

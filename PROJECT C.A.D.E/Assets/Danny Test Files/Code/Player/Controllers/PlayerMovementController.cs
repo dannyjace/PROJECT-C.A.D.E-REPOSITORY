@@ -1,29 +1,30 @@
-using UnityEngine;
-using RevolutionStudios.Player.Utilities;
 using RevolutionStudios.Player.Data;
+using RevolutionStudios.Player.Utilities;
+using UnityEngine;
 
 public class PlayerMovementController
 {
     private readonly PlayerController playerController;
-    private readonly PlayerInputController inputController;
     private readonly PlayerMovementControllerData movementControllerData;
     private readonly CharacterController characterController;
     private Vector3 playerVelocity;
     private int jumpCount;
+    private bool sprinting;
 
     public PlayerMovementController(PlayerController player, PlayerMovementControllerSettings settings)
     {
         playerController = player;
-        inputController = player.InputController;
         movementControllerData = settings.data;
         characterController = settings.controller;
     }
 
     public void Update()
     {
+        UpdateGroundedState();
+        UpdateLocomotionState();
+
         UpdatePlayerMovement();
         UpdatePlayerRotation();
-        UpdatePlayerJump();
         UpdatePlayerGravity();
     }
     public void DrawGizmos()
@@ -31,71 +32,48 @@ public class PlayerMovementController
         DrawDebugGizmos();
     }
 
-    public PlayerGroundedState GetGroundedState()
+    private void UpdateGroundedState()
     {
         if (Physics.CheckSphere(playerController.transform.position + playerController.GroundCheckRadiusOffset, playerController.GroundCheckRadius, playerController.GroundLayer))
         {
-            return PlayerGroundedState.Grounded;
+            playerController.GroundedState = PlayerGroundedState.Grounded;
+            jumpCount = 0;
         }
         else
         {
-            return PlayerGroundedState.Airborne;
+            playerController.GroundedState = PlayerGroundedState.Airborne;
         }
     }
-    public PlayerLocomotionState GetLocomotionState()
+    private void UpdateLocomotionState()
     {
-        return PlayerLocomotionState.Default;
-    }
-    public PlayerAimingState GetAimingState()
-    {
-        return PlayerAimingState.Inactive;
+        if (sprinting && GameManager.instance.InputManager.MoveInput.y < 0.5f)
+        {
+            sprinting = false;
+        }
+
+        playerController.LocomotionState = sprinting ? PlayerLocomotionState.Sprinting : PlayerLocomotionState.Default;
     }
 
     private void UpdatePlayerMovement()
     {
-        Vector3 movementVector = inputController.MovementDirection * GetTargetMovementSpeed();
+        Vector2 moveInput = GameManager.instance.InputManager.MoveInput;
+        Vector3 moveDirection = (moveInput.y * playerController.transform.forward) + (moveInput.x * playerController.transform.right);
+        Vector3 movementVector = moveDirection * GetTargetMovementSpeed();
 
         characterController.Move(movementVector * Time.deltaTime);     
     }
     private void UpdatePlayerRotation()
     {
-        float rotation = inputController.LookX * (playerController.CameraSensitivity.x * 0.25f) * Time.deltaTime;
+        Vector2 lookInput = GameManager.instance.InputManager.LookInput;
+        float rotation = lookInput.x * (playerController.CameraSensitivity.x * 0.25f) * Time.deltaTime;
 
         playerController.transform.Rotate(playerController.transform.up * rotation);
     }
-    private void UpdatePlayerJump()
+    public void UpdatePlayerGravity()
     {
-        /*
+        playerVelocity.y -= playerController.GravityForce * Time.deltaTime;
 
-        if (playerController.GroundedState == PlayerGroundedState.Grounded)
-        {
-            jumpCount = 0;
-        }
-
-        if (inputController.JumpPressed && jumpCount < playerController.MaxJumpCount)
-        {
-            playerVelocity.y = playerController.JumpForce;
-            jumpCount++;
-        }
-
-        */
-    }
-    private void UpdatePlayerGravity()
-    {
-        /*
-
-        if (playerController.GroundedState == PlayerGroundedState.Grounded && !inputController.JumpPressed)
-        {
-            playerVelocity.y = 0;
-        }
-        else
-        {
-            playerVelocity.y -= playerController.GravityForce * Time.deltaTime;
-
-            characterController.Move(playerVelocity * Time.deltaTime);
-        }
-
-        */
+        characterController.Move(playerVelocity * Time.deltaTime);
     }
     private float GetTargetMovementSpeed()
     {
@@ -107,5 +85,28 @@ public class PlayerMovementController
         Gizmos.color = playerController.GroundedState == PlayerGroundedState.Grounded ? Color.green : Color.red;
 
         Gizmos.DrawWireSphere(playerController.transform.position + playerController.GroundCheckRadiusOffset, playerController.GroundCheckRadius);
+    }
+
+
+    public void OnPlayerJump()
+    {
+        if (jumpCount < playerController.MaxJumpCount)
+        {
+            playerVelocity.y = playerController.JumpForce;
+            jumpCount++;
+        }
+    }
+    public void OnPlayerSprint()
+    {
+        float moveY = GameManager.instance.InputManager.MoveInput.y;
+
+        if (moveY > 0.25f && playerController.AimingState == PlayerAimingState.Inactive)
+        {
+            sprinting = !sprinting;
+        }
+        else
+        {
+            sprinting = false;
+        }
     }
 }

@@ -17,7 +17,7 @@ MonoBehaviour:
   movementSpeedSmoothing: 1
   gravityForce: 16
   jumpForce: 7
-  maxJumpCount: 2
+  maxJumpCount: 3
   groundLayer:
     serializedVersion: 2
     m_Bits: 1

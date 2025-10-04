@@ -27,14 +27,6 @@ namespace RevolutionStudios.Player.Utilities
 
 
     [System.Serializable]
-    public struct PlayerInputControllerSettings
-    {
-        [Header("CONTROLLER DATA")]
-        [Space(10)]
-        public PlayerInputControllerData data;
-    }
-
-    [System.Serializable]
     public struct PlayerMovementControllerSettings
     {
         [Header("CONTROLLER DATA")]

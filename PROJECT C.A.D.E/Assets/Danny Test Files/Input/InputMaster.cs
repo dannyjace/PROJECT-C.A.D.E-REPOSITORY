@@ -118,7 +118,7 @@ namespace RevolutionStudios.Input
                     ""id"": ""e290de63-e604-4c5f-9eac-c72e95b8a319"",
                     ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Tap"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
@@ -169,7 +169,7 @@ namespace RevolutionStudios.Input
                 {
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
-                    ""id"": ""71a23d5a-aba9-497f-8e2f-925a58308737"",
+                    ""id"": ""b06e72c5-0319-4374-b8a0-513367fbf7a5"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -399,12 +399,40 @@ namespace RevolutionStudios.Input
                 },
                 {
                     ""name"": """",
-                    ""id"": ""1734aa8b-25c9-4615-a881-ba190f91060d"",
+                    ""id"": ""de99a314-fc4a-4f1c-b9ab-09f45e7773ce"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""User Interface Controls"",
+            ""id"": ""bfc6d8a8-1854-4918-8425-d952ecc16dec"",
+            ""actions"": [
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""1209ca2a-1ae0-455d-81e8-a018611b64c2"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5c56de12-c5b2-43a1-9ba1-07ca790dff88"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -424,11 +452,15 @@ namespace RevolutionStudios.Input
             m_PlayerControls_Fire = m_PlayerControls.FindAction("Fire", throwIfNotFound: true);
             m_PlayerControls_Pause = m_PlayerControls.FindAction("Pause", throwIfNotFound: true);
             m_PlayerControls_Interact = m_PlayerControls.FindAction("Interact", throwIfNotFound: true);
+            // User Interface Controls
+            m_UserInterfaceControls = asset.FindActionMap("User Interface Controls", throwIfNotFound: true);
+            m_UserInterfaceControls_Newaction = m_UserInterfaceControls.FindAction("New action", throwIfNotFound: true);
         }
 
         ~@InputMaster()
         {
             UnityEngine.Debug.Assert(!m_PlayerControls.enabled, "This will cause a leak and performance issues, InputMaster.PlayerControls.Disable() has not been called.");
+            UnityEngine.Debug.Assert(!m_UserInterfaceControls.enabled, "This will cause a leak and performance issues, InputMaster.UserInterfaceControls.Disable() has not been called.");
         }
 
         /// <summary>
@@ -684,6 +716,102 @@ namespace RevolutionStudios.Input
         /// Provides a new <see cref="PlayerControlsActions" /> instance referencing this action map.
         /// </summary>
         public PlayerControlsActions @PlayerControls => new PlayerControlsActions(this);
+
+        // User Interface Controls
+        private readonly InputActionMap m_UserInterfaceControls;
+        private List<IUserInterfaceControlsActions> m_UserInterfaceControlsActionsCallbackInterfaces = new List<IUserInterfaceControlsActions>();
+        private readonly InputAction m_UserInterfaceControls_Newaction;
+        /// <summary>
+        /// Provides access to input actions defined in input action map "User Interface Controls".
+        /// </summary>
+        public struct UserInterfaceControlsActions
+        {
+            private @InputMaster m_Wrapper;
+
+            /// <summary>
+            /// Construct a new instance of the input action map wrapper class.
+            /// </summary>
+            public UserInterfaceControlsActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
+            /// <summary>
+            /// Provides access to the underlying input action "UserInterfaceControls/Newaction".
+            /// </summary>
+            public InputAction @Newaction => m_Wrapper.m_UserInterfaceControls_Newaction;
+            /// <summary>
+            /// Provides access to the underlying input action map instance.
+            /// </summary>
+            public InputActionMap Get() { return m_Wrapper.m_UserInterfaceControls; }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+            public void Enable() { Get().Enable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+            public void Disable() { Get().Disable(); }
+            /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+            public bool enabled => Get().enabled;
+            /// <summary>
+            /// Implicitly converts an <see ref="UserInterfaceControlsActions" /> to an <see ref="InputActionMap" /> instance.
+            /// </summary>
+            public static implicit operator InputActionMap(UserInterfaceControlsActions set) { return set.Get(); }
+            /// <summary>
+            /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <param name="instance">Callback instance.</param>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+            /// </remarks>
+            /// <seealso cref="UserInterfaceControlsActions" />
+            public void AddCallbacks(IUserInterfaceControlsActions instance)
+            {
+                if (instance == null || m_Wrapper.m_UserInterfaceControlsActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_UserInterfaceControlsActionsCallbackInterfaces.Add(instance);
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
+            }
+
+            /// <summary>
+            /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+            /// </summary>
+            /// <remarks>
+            /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+            /// </remarks>
+            /// <seealso cref="UserInterfaceControlsActions" />
+            private void UnregisterCallbacks(IUserInterfaceControlsActions instance)
+            {
+                @Newaction.started -= instance.OnNewaction;
+                @Newaction.performed -= instance.OnNewaction;
+                @Newaction.canceled -= instance.OnNewaction;
+            }
+
+            /// <summary>
+            /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="UserInterfaceControlsActions.UnregisterCallbacks(IUserInterfaceControlsActions)" />.
+            /// </summary>
+            /// <seealso cref="UserInterfaceControlsActions.UnregisterCallbacks(IUserInterfaceControlsActions)" />
+            public void RemoveCallbacks(IUserInterfaceControlsActions instance)
+            {
+                if (m_Wrapper.m_UserInterfaceControlsActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            /// <summary>
+            /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+            /// </summary>
+            /// <remarks>
+            /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+            /// </remarks>
+            /// <seealso cref="UserInterfaceControlsActions.AddCallbacks(IUserInterfaceControlsActions)" />
+            /// <seealso cref="UserInterfaceControlsActions.RemoveCallbacks(IUserInterfaceControlsActions)" />
+            /// <seealso cref="UserInterfaceControlsActions.UnregisterCallbacks(IUserInterfaceControlsActions)" />
+            public void SetCallbacks(IUserInterfaceControlsActions instance)
+            {
+                foreach (var item in m_Wrapper.m_UserInterfaceControlsActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_UserInterfaceControlsActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        /// <summary>
+        /// Provides a new <see cref="UserInterfaceControlsActions" /> instance referencing this action map.
+        /// </summary>
+        public UserInterfaceControlsActions @UserInterfaceControls => new UserInterfaceControlsActions(this);
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player Controls" which allows adding and removing callbacks.
         /// </summary>
@@ -754,6 +882,21 @@ namespace RevolutionStudios.Input
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnInteract(InputAction.CallbackContext context);
+        }
+        /// <summary>
+        /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "User Interface Controls" which allows adding and removing callbacks.
+        /// </summary>
+        /// <seealso cref="UserInterfaceControlsActions.AddCallbacks(IUserInterfaceControlsActions)" />
+        /// <seealso cref="UserInterfaceControlsActions.RemoveCallbacks(IUserInterfaceControlsActions)" />
+        public interface IUserInterfaceControlsActions
+        {
+            /// <summary>
+            /// Method invoked when associated input action "New action" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnNewaction(InputAction.CallbackContext context);
         }
     }
 }

@@ -1,11 +1,11 @@
-using RevolutionStudios.Player.Utilities;
 using RevolutionStudios.Player.Data;
+using RevolutionStudios.Player.Utilities;
 using UnityEngine;
+using UnityEngine.InputSystem.XInput;
 
 public class PlayerAttributeController
 {
     private readonly PlayerController playerController;
-    private readonly PlayerInputController inputController;
     private readonly PlayerAttributeControllerData attributeControllerData;
 
 
@@ -32,7 +32,6 @@ public class PlayerAttributeController
     public PlayerAttributeController(PlayerController player, PlayerAttributeControllerSettings settings)
     {
         playerController = player;
-        inputController = player.InputController;
         attributeControllerData = settings.data;
     }
 
@@ -46,17 +45,11 @@ public class PlayerAttributeController
 
         currentExperience = attributeControllerData.currentExperience;
         maximumExperience = attributeControllerData.maximumExperience;
-       
-
-
-        //HUDManager.instance.playerHPBar.fillAmount = (float)currentHealth / initialHealth;
-        //HUDManager.instance.playerEXPBar.fillAmount = (float)currentExperience / maximumExperience;
     }
 
     public void Update()
     {
         UpdateStamina();
-        UpdateInteraction();
     }
 
 
@@ -70,33 +63,24 @@ public class PlayerAttributeController
         {
             currentStamina += (int)(attributeControllerData.staminaRegenerationRate * Time.deltaTime);
         }
-
-        //HUDManager.instance.playerStaminaBar.fillAmount = (float)currentStamina / initialStamina;
     }
-    private void UpdateInteraction()
+    public void OnPlayerInteract()
     {
-        /*
-
-        if (inputController.InteractHeld)
+        if (Physics.Raycast(playerController.PlayerCamera.transform.position, playerController.PlayerCamera.transform.forward, out RaycastHit hit, attributeControllerData.interactionRange, ~attributeControllerData.interactionIgnoreLayer))
         {
-            if (Physics.Raycast(playerController.PlayerCamera.transform.position, playerController.PlayerCamera.transform.forward, out RaycastHit hit, attributeControllerData.interactionRange, ~attributeControllerData.interactionIgnoreLayer))
-            {
-                IInteractable target = hit.collider.GetComponent<IInteractable>();
+            IInteractable target = hit.collider.GetComponent<IInteractable>();
 
-                target?.Interact();
-            }
+            Debug.Log(hit.collider.name);
+
+            target?.Interact();
         }
-
-        */
     }
     public void AddExperience(int amount)
     {
         currentExperience += amount;
-        //HUDManager.instance.playerEXPBar.fillAmount = (float)currentExperience / maximumExperience;
 
         if (currentExperience > maximumExperience)
         {
-            //HUDManager.instance.LevelUp();
             currentExperience = currentExperience - maximumExperience;
             maximumExperience = maximumExperience * 2;
         }
@@ -104,7 +88,6 @@ public class PlayerAttributeController
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
-        //HUDManager.instance.playerHPBar.fillAmount = (float)currentHealth / initialHealth;
         playerController.StartCoroutine(playerController.FlashDamageScreen());
 
         if (currentHealth <= 0)

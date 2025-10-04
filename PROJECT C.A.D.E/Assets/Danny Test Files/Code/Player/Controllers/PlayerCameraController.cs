@@ -4,7 +4,6 @@ using UnityEngine;
 public class PlayerCameraController
 {
     private readonly PlayerController playerController;
-    private readonly PlayerInputController inputController;
     private readonly Transform cameraRig;
     private readonly Transform cameraRigTargetTransform;
 
@@ -14,7 +13,6 @@ public class PlayerCameraController
     public PlayerCameraController(PlayerController player, PlayerCameraControllerSettings settings)
     {
         playerController = player;  
-        inputController = player.InputController;
         cameraRig = settings.cameraRigTransform;
         cameraRigTargetTransform = settings.cameraRigTargetTransform;
     }
@@ -31,10 +29,10 @@ public class PlayerCameraController
 
     private void UpdateCameraRigRotation()
     {
-        float moveX = inputController.MoveX;
+        float moveX = GameManager.instance.InputManager.MoveInput.x;
 
-        float lookX = inputController.LookX;
-        float lookY = inputController.LookY * (playerController.CameraSensitivity.y / 2) * Time.deltaTime;
+        float lookX = GameManager.instance.InputManager.LookInput.x;
+        float lookY = GameManager.instance.InputManager.LookInput.y * (playerController.CameraSensitivity.y / 2) * Time.deltaTime;
 
         cameraRigXRotation += lookY;
         cameraRigXRotation = Mathf.Clamp(cameraRigXRotation, playerController.CameraRotationClamp.x, playerController.CameraRotationClamp.y);

@@ -20,7 +20,7 @@ MonoBehaviour:
   movingBobbingFrequency: 18.5
   movingBobbingAmplitude: 100
   sprintingBobbingFrequency: 20
-  sprintingBobbingAmplitude: 250
+  sprintingBobbingAmplitude: 300
   swaySpeedMultiplier: {x: 10, y: 5, z: 4}
   lookSwayRotationMultiplier: {x: -2.5, y: 2, z: -1}
   lookSwayPositionMultiplier: {x: 3, y: 1.5, z: 10}

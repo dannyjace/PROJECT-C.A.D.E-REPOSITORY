@@ -8,22 +8,18 @@ namespace RevolutionStudios.Player.StateMachine
         public override void OnEnterState()
         {
             Context.LocomotionState = PlayerLocomotionState.Sprinting;
-
-            //Context.CameraController.UpdateCameraRigYOffset();
         }
 
         public override void OnUpdateState()
         {
-            //Context.LocomotionState = Context.InputController.IsSprinting ? PlayerLocomotionState.Sprinting : PlayerLocomotionState.Default;
-
-            switch (Context.LocomotionState)
+            if (GameManager.instance.InputManager.MoveInput.y < 0.5f)
             {
-                case PlayerLocomotionState.Default:
-                    //Context.LocomotionStateMachine.ChangeState<PlayerDefaultLocomotionState>();
-                    break;
+                Context.LocomotionState = PlayerLocomotionState.Default;
+            }
 
-                case PlayerLocomotionState.Sprinting:
-                    break;
+            if (Context.LocomotionState == PlayerLocomotionState.Default)
+            {
+                //Context.LocomotionStateMachine.ChangeState<PlayerDefaultLocomotionState>();
             }
         }
 

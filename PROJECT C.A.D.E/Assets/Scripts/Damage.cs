@@ -70,7 +70,7 @@ public class Damage : MonoBehaviour
     {
         if (damageType.homing == type)
         {
-            playerDir = GameManager.instance.player.transform.position - transform.position;
+            playerDir = GameManager.instance.PlayerCharacter.transform.position - transform.position;
             rb.linearVelocity = playerDir.normalized * speed * Time.deltaTime;
             Quaternion rot = Quaternion.LookRotation(transform.forward, playerDir);
             transform.rotation = Quaternion.Lerp(transform.rotation, rot, turnSpeed * Time.deltaTime);
