@@ -314,48 +314,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5953913905002254816, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
   m_PrefabInstance: {fileID: 482059761}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &77633694 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3566384255578824263, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
-  m_PrefabInstance: {fileID: 482059761}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &193866872 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4042199038585316370, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-  m_PrefabInstance: {fileID: 702587178}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &193866877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193866872}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineBrain
-  ShowDebugText: 0
-  ShowCameraFrustum: 1
-  IgnoreTimeScale: 0
-  WorldUpOverride: {fileID: 0}
-  ChannelMask: -1
-  UpdateMethod: 2
-  BlendUpdateMethod: 1
-  LensModeOverride:
-    Enabled: 0
-    DefaultMode: 2
-  DefaultBlend:
-    Style: 1
-    Time: 1
-    CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  CustomBlends: {fileID: 0}
 --- !u!1 &203844586
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,19 +752,23 @@ PrefabInstance:
       propertyPath: m_Name
       value: MovableDoor_01
       objectReference: {fileID: 0}
-    - target: {fileID: 7551759316784731646, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
-      propertyPath: doorCam
-      value: 
-      objectReference: {fileID: 1207382332}
-    m_RemovedComponents:
-    - {fileID: 8241357100154023520, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3566384255578824263, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1207382333}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 908557937700010026, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
+--- !u!114 &533974602 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2421260647662521994, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
+  m_PrefabInstance: {fileID: 7071276556697810113}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1 &664660654
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,77 +1040,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1769933465142623538, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.4319267
-      objectReference: {fileID: 0}
-    - target: {fileID: 1769933465142623538, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 1769933465142623538, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.3568131
-      objectReference: {fileID: 0}
-    - target: {fileID: 1769933465142623538, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.90379745
-      objectReference: {fileID: 0}
-    - target: {fileID: 1769933465142623538, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.30059406
-      objectReference: {fileID: 0}
-    - target: {fileID: 1769933465142623538, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.2883578
-      objectReference: {fileID: 0}
-    - target: {fileID: 1769933465142623538, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.09820004
-      objectReference: {fileID: 0}
-    - target: {fileID: 1821559072391564887, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1821559072391564887, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1821559072391564887, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0000003799796
-      objectReference: {fileID: 0}
-    - target: {fileID: 1821559072391564887, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalRotation.w
+    - target: {fileID: 3720727153022373837, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
+      propertyPath: Priority.m_Value
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1821559072391564887, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1821559072391564887, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1821559072391564887, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3778325080660525657, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: field of view
-      value: 60.000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 4042199038585316370, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4150124485610469934, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: field of view
-      value: 60.000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 4150124485610469934, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      propertyPath: far clip plane
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9146936056952637757, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1192,90 +1086,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1660717989386220696, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 1129745063}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4042199038585316370, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 193866877}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
---- !u!1 &1129745062
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1129745063}
-  - component: {fileID: 1129745064}
-  m_Layer: 0
-  m_Name: First Person Cinemachine Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1129745063
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129745062}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1328054325}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1129745064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129745062}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
-  Priority:
-    Enabled: 1
-    m_Value: 10
-  OutputChannel: 1
-  StandbyUpdate: 2
-  m_StreamingVersion: 20241001
-  m_LegacyPriority: 0
-  Target:
-    TrackingTarget: {fileID: 0}
-    LookAtTarget: {fileID: 0}
-    CustomLookAtTarget: 0
-  Lens:
-    FieldOfView: 60.000004
-    OrthographicSize: 5
-    NearClipPlane: 0.01
-    FarClipPlane: 100
-    Dutch: 0
-    ModeOverride: 0
-    PhysicalProperties:
-      GateFit: 2
-      SensorSize: {x: 21.946, y: 16.002}
-      LensShift: {x: 0, y: 0}
-      FocusDistance: 10
-      Iso: 200
-      ShutterSpeed: 0.005
-      Aperture: 16
-      BladeCount: 5
-      Curvature: {x: 2, y: 11}
-      BarrelClipping: 0.25
-      Anamorphism: 0
-  BlendHint: 0
 --- !u!1 &1163895792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,81 +1225,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163895792}
   m_CullTransparentMesh: 1
---- !u!1 &1207382331
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1207382333}
-  - component: {fileID: 1207382332}
-  m_Layer: 0
-  m_Name: Door Cam
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1207382332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1207382331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
-  Priority:
-    Enabled: 1
-    m_Value: 0
-  OutputChannel: 1
-  StandbyUpdate: 2
-  m_StreamingVersion: 20241001
-  m_LegacyPriority: 0
-  Target:
-    TrackingTarget: {fileID: 0}
-    LookAtTarget: {fileID: 0}
-    CustomLookAtTarget: 0
-  Lens:
-    FieldOfView: 60.000004
-    OrthographicSize: 5
-    NearClipPlane: 0.01
-    FarClipPlane: 100
-    Dutch: 0
-    ModeOverride: 0
-    PhysicalProperties:
-      GateFit: 2
-      SensorSize: {x: 21.946, y: 16.002}
-      LensShift: {x: 0, y: 0}
-      FocusDistance: 10
-      Iso: 200
-      ShutterSpeed: 0.005
-      Aperture: 16
-      BladeCount: 5
-      Curvature: {x: 2, y: 11}
-      BarrelClipping: 0.25
-      Anamorphism: 0
-  BlendHint: 0
---- !u!4 &1207382333
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1207382331}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.20210359, y: 0, z: 0, w: 0.97936416}
-  m_LocalPosition: {x: -3.75, y: 2.729577, z: -3.901033}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 77633694}
-  m_LocalEulerAnglesHint: {x: 23.32, y: 0, z: 0}
 --- !u!1 &1232061888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1539,86 +1277,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RectMask2D
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
---- !u!4 &1328054325 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1660717989386220696, guid: f52fea74047cdf64faf0aefd721789f7, type: 3}
-  m_PrefabInstance: {fileID: 702587178}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1449540682
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1449540683}
-  - component: {fileID: 1449540684}
-  m_Layer: 0
-  m_Name: Door Cam
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1449540683
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449540682}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.20210359, y: 0, z: 0, w: 0.97936416}
-  m_LocalPosition: {x: -3.75, y: 2.729577, z: -3.901033}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2718274278337299780}
-  m_LocalEulerAnglesHint: {x: 23.32, y: 0, z: 0}
---- !u!114 &1449540684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449540682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
-  Priority:
-    Enabled: 1
-    m_Value: 0
-  OutputChannel: 1
-  StandbyUpdate: 2
-  m_StreamingVersion: 20241001
-  m_LegacyPriority: 0
-  Target:
-    TrackingTarget: {fileID: 0}
-    LookAtTarget: {fileID: 0}
-    CustomLookAtTarget: 0
-  Lens:
-    FieldOfView: 60.000004
-    OrthographicSize: 5
-    NearClipPlane: 0.01
-    FarClipPlane: 100
-    Dutch: 0
-    ModeOverride: 0
-    PhysicalProperties:
-      GateFit: 2
-      SensorSize: {x: 21.946, y: 16.002}
-      LensShift: {x: 0, y: 0}
-      FocusDistance: 10
-      Iso: 200
-      ShutterSpeed: 0.005
-      Aperture: 16
-      BladeCount: 5
-      Curvature: {x: 2, y: 11}
-      BarrelClipping: 0.25
-      Anamorphism: 0
-  BlendHint: 0
 --- !u!1 &2081573892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,6 +1499,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1618868690892803930, guid: 176070decfc46a9409bc1eed872122df, type: 3}
+      propertyPath: delay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1618868690892803930, guid: 176070decfc46a9409bc1eed872122df, type: 3}
+      propertyPath: prompt
+      value: 
+      objectReference: {fileID: 1163895794}
+    - target: {fileID: 1618868690892803930, guid: 176070decfc46a9409bc1eed872122df, type: 3}
       propertyPath: textInput
       value: 
       objectReference: {fileID: 32480987}
@@ -1848,10 +1514,6 @@ PrefabInstance:
       propertyPath: hackMinigame
       value: 
       objectReference: {fileID: 2096061810}
-    - target: {fileID: 1618868690892803930, guid: 176070decfc46a9409bc1eed872122df, type: 3}
-      propertyPath: interactions.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1618868690892803930, guid: 176070decfc46a9409bc1eed872122df, type: 3}
       propertyPath: 'interactions.Array.data[0]'
       value: 
@@ -1914,11 +1576,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5953913905002254816, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
   m_PrefabInstance: {fileID: 7071276556697810113}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2718274278337299780 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3566384255578824263, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
-  m_PrefabInstance: {fileID: 7071276556697810113}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7071276556697810113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1972,16 +1629,18 @@ PrefabInstance:
       value: MovableDoor
       objectReference: {fileID: 0}
     - target: {fileID: 7551759316784731646, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
+      propertyPath: delay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7551759316784731646, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
       propertyPath: doorCam
       value: 
-      objectReference: {fileID: 1449540684}
+      objectReference: {fileID: 533974602}
     m_RemovedComponents:
     - {fileID: 8241357100154023520, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3566384255578824263, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1449540683}
+    m_RemovedGameObjects:
+    - {fileID: 7551101768499272596, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dabdb7f0ff54274e8367fe4009c9d2f, type: 3}
 --- !u!1660057539 &9223372036854775807

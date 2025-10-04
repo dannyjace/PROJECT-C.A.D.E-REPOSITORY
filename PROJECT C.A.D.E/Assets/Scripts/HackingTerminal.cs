@@ -1,14 +1,17 @@
 using System.Collections;
 using TMPro;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class HackingTerminal : MonoBehaviour, IInteractable
 {
     [SerializeField] GameObject[] interactions;
+    [SerializeField] float delay;
 
+    [Header("MINIGAME SETTINGS")]
     [SerializeField] GameObject hackMinigame;
+    [SerializeField] TMP_Text prompt;
     [SerializeField] TMP_InputField textInput;
-
 
 
     public void Interact()
@@ -17,31 +20,16 @@ public class HackingTerminal : MonoBehaviour, IInteractable
         hackMinigame.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
-        
-        
     }
 
     private void HackSuccess()
     {
-        GameManager.instance.PlayerController.AnimationController.Hack();
-
-        foreach (var interaction in interactions)
-        {
-            IInteractable interactable = interaction.GetComponent<IInteractable>();
-
-            if (interactable != null)
-            {
-                interactable.Interact();
-            }
-        }
+        StartCoroutine(IntractInSequence());
     }
 
     public void CompareInput()
     {
-        string input = textInput.text;
-
-        if (input == "CADE")
+        if (textInput.text == "CADE")
         {
             Time.timeScale = 1;
             HackSuccess();
@@ -49,6 +37,27 @@ public class HackingTerminal : MonoBehaviour, IInteractable
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+        else
+        {
+            prompt.text = "Inncorrect, Type CADE to Hack";
+        }
     }
 
+    IEnumerator IntractInSequence()
+    {
+        for(int i = 0; i < interactions.Length; i++)
+        {
+            CinemachineCamera cam =  interactions[i].GetComponentInChildren<CinemachineCamera>();
+            IInteractable interactable = interactions[i].GetComponent<IInteractable>();
+
+            if (interactable != null && cam != null)
+            {
+                cam.Priority = i + 2;
+                interactable.Interact();
+            }
+            yield return new WaitForSeconds(delay);
+            cam.Priority = 0;
+        }
+
+    }
 }

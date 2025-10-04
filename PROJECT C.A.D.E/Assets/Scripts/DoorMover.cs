@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class DoorMover : MonoBehaviour, IInteractable
 {
-    [SerializeField] float moveDist;
-    [SerializeField] float moveSpeed;
+    [SerializeField, Range(0, 5)] float moveDist;
+    [SerializeField, Range(0, 5)] float moveSpeed;
     [SerializeField] Vector3 moveDir;
 
-    [SerializeField] CinemachineCamera doorCam;
+    public CinemachineCamera doorCam;
+    [SerializeField] float delay;
 
     [SerializeField] GameObject leftDoor;
     [SerializeField] GameObject rightDoor;
@@ -46,11 +47,8 @@ public class DoorMover : MonoBehaviour, IInteractable
     
     IEnumerator OpenDoor()
     {
-        doorCam.Priority = 20;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(delay);
         isOpening = true;
-        yield return new WaitForSeconds(.5f);
-        doorCam.Priority = 0;
     }
 
     public void Interact()
