@@ -46,6 +46,8 @@ public class PlayerAttributeController
 
         currentExperience = attributeControllerData.currentExperience;
         maximumExperience = attributeControllerData.maximumExperience;
+       
+
 
         //HUDManager.instance.playerHPBar.fillAmount = (float)currentHealth / initialHealth;
         //HUDManager.instance.playerEXPBar.fillAmount = (float)currentExperience / maximumExperience;

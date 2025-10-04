@@ -37,6 +37,8 @@ namespace RevolutionStudios.Player.Data
 
         public event UnityAction Pause = delegate { };
 
+        public event UnityAction Interact = delegate { };
+
 
         public void OnLook(InputAction.CallbackContext context)
         {
@@ -116,7 +118,13 @@ namespace RevolutionStudios.Player.Data
                 Pause.Invoke();
             }
         }
-
+        public void OnInteract(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                Interact.Invoke();
+            }
+        }
 
         public void InitializeInputMaster()
         {
@@ -128,5 +136,7 @@ namespace RevolutionStudios.Player.Data
 
             inputMaster.PlayerControls.Enable();
         }
+
+        
     }
 }

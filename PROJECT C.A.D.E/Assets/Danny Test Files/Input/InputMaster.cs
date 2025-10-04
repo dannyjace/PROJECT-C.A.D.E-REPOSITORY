@@ -165,6 +165,15 @@ namespace RevolutionStudios.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""71a23d5a-aba9-497f-8e2f-925a58308737"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -387,6 +396,17 @@ namespace RevolutionStudios.Input
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1734aa8b-25c9-4615-a881-ba190f91060d"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -403,6 +423,7 @@ namespace RevolutionStudios.Input
             m_PlayerControls_Aim = m_PlayerControls.FindAction("Aim", throwIfNotFound: true);
             m_PlayerControls_Fire = m_PlayerControls.FindAction("Fire", throwIfNotFound: true);
             m_PlayerControls_Pause = m_PlayerControls.FindAction("Pause", throwIfNotFound: true);
+            m_PlayerControls_Interact = m_PlayerControls.FindAction("Interact", throwIfNotFound: true);
         }
 
         ~@InputMaster()
@@ -491,6 +512,7 @@ namespace RevolutionStudios.Input
         private readonly InputAction m_PlayerControls_Aim;
         private readonly InputAction m_PlayerControls_Fire;
         private readonly InputAction m_PlayerControls_Pause;
+        private readonly InputAction m_PlayerControls_Interact;
         /// <summary>
         /// Provides access to input actions defined in input action map "Player Controls".
         /// </summary>
@@ -534,6 +556,10 @@ namespace RevolutionStudios.Input
             /// Provides access to the underlying input action "PlayerControls/Pause".
             /// </summary>
             public InputAction @Pause => m_Wrapper.m_PlayerControls_Pause;
+            /// <summary>
+            /// Provides access to the underlying input action "PlayerControls/Interact".
+            /// </summary>
+            public InputAction @Interact => m_Wrapper.m_PlayerControls_Interact;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -584,6 +610,9 @@ namespace RevolutionStudios.Input
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
 
             /// <summary>
@@ -619,6 +648,9 @@ namespace RevolutionStudios.Input
                 @Pause.started -= instance.OnPause;
                 @Pause.performed -= instance.OnPause;
                 @Pause.canceled -= instance.OnPause;
+                @Interact.started -= instance.OnInteract;
+                @Interact.performed -= instance.OnInteract;
+                @Interact.canceled -= instance.OnInteract;
             }
 
             /// <summary>
@@ -715,6 +747,13 @@ namespace RevolutionStudios.Input
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnPause(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnInteract(InputAction.CallbackContext context);
         }
     }
 }
