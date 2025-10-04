@@ -79,18 +79,18 @@ namespace RevolutionStudios.GameManagement
         {
             if (context.performed)
             {
-                OnPlayerAimPerformed?.Invoke();
+                OnPlayerFirePerformed.Invoke();
             }
             else if (context.canceled)
             {
-                OnPlayerFireCanceled?.Invoke();
+                OnPlayerFireCanceled.Invoke();
             }
         }
         public void OnPause(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                OnPlayerPausePerformed?.Invoke();
+                OnPlayerPausePerformed.Invoke();
             }
         }
         public void OnInteract(InputAction.CallbackContext context)
