@@ -186,4 +186,9 @@ public class PlayerAnimationController
         animator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandIK.position);
         animator.SetIKRotation(AvatarIKGoal.LeftHand, leftHandIK.rotation);
     }
+
+    public void Hack()
+    {
+        animator.SetTrigger("Hack");
+    }
 }
